@@ -19,4 +19,5 @@ title = "Обо мне"
 Если есть вопросы, хотите исправить, добавить новые идеи — смело обращайтесь.  
 - [Github](https://github.com/jahamars)  
 - [Email](mailto:jahamarsi@gmail.com)  
+- [resume](https://jahamars.github.io)  
 - [Telegram](https://t.me/gruvboxx)
