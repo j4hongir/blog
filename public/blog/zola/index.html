@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+
+        <link rel="stylesheet" href="https://jmee.netlify.app/fonts.css">
+        <link rel="stylesheet" href="https://jmee.netlify.app/style.css">
+
+        <title>
+    Блог на Zola и Netlify
+</title>
+
+        
+    </head>
+    <body>
+        
+    <div class="wrap">
+        <div class="section" id="title">
+            
+    Блог на Zola и Netlify
+
+        </div>
+        <div class="section" id="sections">
+            
+        </div>
+        <div class="section" id="content">
+            
+    
+        
+            
+    
+    08.03.2025
+
+        
+        
+            
+                &#183; 513 words
+            
+        
+        
+            
+            
+                &#183; 3 min
+            
+        
+        
+            <div class="tag-container">
+                Tags :&nbsp;
+                
+                    <span class="tag">
+                        <a href="https://jmee.netlify.app/tags/netlify/">
+                            netlify
+                        </a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://jmee.netlify.app/tags/zola/">
+                            zola
+                        </a>
+                    </span>
+                
+            </div>
+        
+        
+        <hr/>
+    
+    <h2 id="predystoriia">Предыстория</h2>
+<p>Уже давно у меня была мысль о том, чтобы писать блоги или хотя бы делиться своими заметками с людьми, которым это интересно. Так начался мой ресерч. В процессе я наткнулся на <a href="https://mixa.site/">https://mixa.site/</a> — реально практичный и удобный сервис, который превращает ваши заметки в формате Markdown (и не только, он поддерживает и другие платформы) в полноценный блог. Сервис классный, рекомендую! Для использования достаточно установить расширение в Obsidian или подключить ссылку из Notion.
+Но у него есть свои недоработки и минусы:</p>
+<ol>
+<li>При каждом добавлении новой заметки настройки и темы блога сбрасываются на стандартные.</li>
+<li>Наблюдается странное поведение при открытии на мобильных устройствах.</li>
+</ol>
+<p>(Если вы знаете решение этих проблем или они уже исправлены, напишите мне в Telegram — ссылка в разделе "Обо мне".)</p>
+<p>Я продолжил поиски. Короче, после множества экспериментов я остановился на Zola. Почему? Там я нашел душевную и красивую тему, плюс сам Zola оказался легким, без лишних зависимостей, быстрым, с понятной структурой директорий и поддержкой Markdown. В итоге я начал оборачивать всё это в Git и отправлять на GitHub Pages, но официальная документация не помогла. Тогда я обратился за помощью к форумам и там наткнулся на Netlify — сервис для хостинга сайтов. Подробности можете прочитать на их сайте, я вдаваться не буду. После экспериментов я успешно <em>выложил свой блог, созданный на Zola, через Netlify.</em></p>
+<h2 id="kak-eto-sdelat">Как это сделать</h2>
+<h3 id="ustanovka-zola">Установка Zola</h3>
+<p>Для Arch Linux:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">sudo</span><span> pacman</span><span style="color:#bf616a;"> -S</span><span> zola
+</span></code></pre>
+<p>Для других систем смотрите инструкцию тут: <a href="https://www.getzola.org/documentation/getting-started/installation/">https://www.getzola.org/documentation/getting-started/installation/</a>.</p>
+<p>Там же можно найти темы: <a href="https://www.getzola.org/themes/">https://www.getzola.org/themes/</a>. Выбирайте, что вам по душе. (Можно писать свои стили, но я этого не делал.)</p>
+<h3 id="sozdanie-proekta">Создание проекта</h3>
+<p>Создаем директорию и инициализируем проект:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">mkdir</span><span> somedir
+</span><span style="color:#bf616a;">zola</span><span> init somedir
+</span></code></pre>
+<p>Заходим в директорию — это будет корневая папка проекта. Все пути дальше указаны относительно неё. Выбранную тему добавляем как субмодуль:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Пример для темы Kita
+</span><span style="color:#bf616a;">git</span><span> submodule add https://github.com/st1020/kita.git themes/kita
+</span></code></pre>
+<p>Открываем файл <code>config.toml</code> в корне проекта и добавляем настройки:</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#65737e;"># Основной URL сайта
+</span><span style="color:#bf616a;">base_url </span><span>= &quot;</span><span style="color:#a3be8c;">https://</span><span>&quot;
+</span><span>
+</span><span style="color:#65737e;"># Автоматическая компиляция Sass
+</span><span style="color:#bf616a;">compile_sass </span><span>= </span><span style="color:#d08770;">true
+</span><span>
+</span><span style="color:#65737e;"># Используемая тема
+</span><span style="color:#bf616a;">theme </span><span>= &quot;</span><span style="color:#a3be8c;">kita</span><span>&quot;  </span><span style="color:#65737e;"># Замените на вашу тему
+</span><span>
+</span><span style="color:#65737e;"># Создание поискового индекса для JS
+</span><span style="color:#bf616a;">build_search_index </span><span>= </span><span style="color:#d08770;">true
+</span><span>
+</span><span style="color:#65737e;"># Таксономии для тегов и авторов с RSS
+</span><span style="color:#bf616a;">taxonomies </span><span>= [
+</span><span>    { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">tags</span><span>&quot;, </span><span style="color:#bf616a;">rss </span><span>= </span><span style="color:#d08770;">true </span><span>},
+</span><span>    { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">authors</span><span>&quot;, </span><span style="color:#bf616a;">rss </span><span>= </span><span style="color:#d08770;">true </span><span>}
+</span><span>]
+</span><span>
+</span><span style="color:#65737e;"># Настройки Markdown
+</span><span>[markdown]
+</span><span style="color:#65737e;"># Включение подсветки синтаксиса
+</span><span style="color:#bf616a;">highlight_code </span><span>= </span><span style="color:#d08770;">true
+</span><span>
+</span><span style="color:#65737e;"># Дополнительные настройки
+</span><span>[extra]
+</span><span style="color:#65737e;"># Формат даты: день.месяц.год
+</span><span style="color:#bf616a;">date_format </span><span>= &quot;</span><span style="color:#a3be8c;">%d.%m.%Y</span><span>&quot;
+</span><span>
+</span><span style="color:#65737e;"># Название главной страницы
+</span><span style="color:#bf616a;">home </span><span>= &quot;</span><span style="color:#a3be8c;">Главная</span><span>&quot;
+</span><span>
+</span><span style="color:#65737e;"># Меню
+</span><span style="color:#bf616a;">sam_menu </span><span>= [
+</span><span>    { </span><span style="color:#bf616a;">text </span><span>= &quot;</span><span style="color:#a3be8c;">Записи</span><span>&quot;, </span><span style="color:#bf616a;">link </span><span>= &quot;</span><span style="color:#a3be8c;">/blog</span><span>&quot; },
+</span><span>    { </span><span style="color:#bf616a;">text </span><span>= &quot;</span><span style="color:#a3be8c;">Обо мне</span><span>&quot;, </span><span style="color:#bf616a;">link </span><span>= &quot;</span><span style="color:#a3be8c;">/about</span><span>&quot; },
+</span><span>    { </span><span style="color:#bf616a;">text </span><span>= &quot;</span><span style="color:#a3be8c;">GitHub</span><span>&quot;, </span><span style="color:#bf616a;">link </span><span>= &quot;</span><span style="color:#a3be8c;">https://github.com</span><span>&quot; }
+</span><span>]
+</span></code></pre>
+<h3 id="nastroika-papki-content">Настройка папки <code>content</code></h3>
+<p>Структура может выглядеть так:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>content
+</span><span>├── about
+</span><span>│   └── _index.md
+</span><span>└── blog
+</span><span>    ├── first.md
+</span><span>    ├── _index.md
+</span><span>    └── second.md
+</span></code></pre>
+<p>Тема может быть специфичной, или вы захотите добавить свои модули — меняйте всё на свой вкус.</p>
+<p>Пример <code>content/blog/_index.md</code>:</p>
+<pre data-lang="md" style="background-color:#2b303b;color:#c0c5ce;" class="language-md "><code class="language-md" data-lang="md"><span>+++
+</span><span>title = &quot;Мои записи&quot;
+</span><span>sort_by = &quot;date&quot;
+</span><span>template = &quot;blog.html&quot;
+</span><span>page_template = &quot;blog-page.html&quot;
+</span><span>+++
+</span></code></pre>
+<p>В этой директории остальные файлы — это ваши статьи или посты. Создаем их и пишем что-нибудь.</p>
+<p>Пример <code>content/blog/first.md</code>:</p>
+<pre data-lang="md" style="background-color:#2b303b;color:#c0c5ce;" class="language-md "><code class="language-md" data-lang="md"><span>+++
+</span><span>title = &quot;Мой первый пост&quot;
+</span><span>date = 2025-03-08
+</span><span>[taxonomies]
+</span><span>tags = [&quot;блог&quot;, &quot;zola&quot;]
+</span><span>+++
+</span><span>Это мой первый пост в блоге, созданном с Zola.
+</span></code></pre>
+<p>Пример <code>content/about/_index.md</code>:</p>
+<pre data-lang="md" style="background-color:#2b303b;color:#c0c5ce;" class="language-md "><code class="language-md" data-lang="md"><span>+++
+</span><span>title = &quot;Обо мне&quot;
+</span><span>+++
+</span><span>Привет! Это мой блог, созданный с Zola.
+</span></code></pre>
+<h3 id="zapusk-i-proverka">Запуск и проверка</h3>
+<p>Запускаем локальный сервер:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">zola</span><span> serve
+</span></code></pre>
+<p>Смотрим результат на <a href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>.</p>
+<p>Генерируем сайт для публикации:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">zola</span><span> build
+</span></code></pre>
+<p>Это создаст папку <code>public</code> с готовым статическим сайтом.</p>
+<h3 id="nastroika-netlify">Настройка Netlify</h3>
+<p>В корне проекта создаем файл <code>netlify.toml</code>:</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[build]
+</span><span>  </span><span style="color:#bf616a;">command </span><span>= &quot;</span><span style="color:#a3be8c;">zola build</span><span>&quot;
+</span><span>  </span><span style="color:#bf616a;">publish </span><span>= &quot;</span><span style="color:#a3be8c;">public</span><span>&quot;
+</span><span>
+</span><span>[build.environment]
+</span><span>  </span><span style="color:#bf616a;">ZOLA_VERSION </span><span>= &quot;</span><span style="color:#a3be8c;">0.20.0</span><span>&quot; </span><span style="color:#65737e;"># Укажите нужную версию Zola
+</span></code></pre>
+<h3 id="publikatsiia">Публикация</h3>
+<p>Отправляем проект на GitHub. Пока код там "посидит", переходим на <a href="https://app.netlify.com/">https://app.netlify.com/</a> и регистрируемся.</p>
+<p>В дашборде выбираем:<br />
+<strong>Add new site &gt; Import an existing project &gt; GitHub</strong><br />
+(Пройдите авторизацию, рекомендую дать доступ только к нужному репозиторию, а не ко всем.)<br />
+Выбираем наш репозиторий и настраиваем:</p>
+<ul>
+<li><strong>Team</strong>: Digital Space</li>
+<li><strong>Site name</strong>: имя сайта (укажите то, что прописали в <code>base_url</code>)</li>
+<li><strong>Branch to deploy</strong>: main</li>
+<li><strong>Base directory</strong>: /</li>
+<li><strong>Build command</strong>: zola build</li>
+<li><strong>Publish directory</strong>: public</li>
+</ul>
+<p>Остальное оставляем по умолчанию. Нажимаем <strong>Deploy</strong> и ждем, пока сайт поднимется. В разделе <strong>Production deploys</strong> можно следить за процессом или увидеть ошибки, если они возникнут.</p>
+<p>В итоге ваш сайт будет доступен по адресу <code>выбранноеимя.netlify.app</code>.</p>
+<p>Вот и всё, друзья! В следующих статьях попробую рассказать про Astra. Если интересно, загляните к нам сюда: <a href="https://hyprland.netlify.app/">https://hyprland.netlify.app/</a>.</p>
+
+
+        </div>
+        
+    <div class="section bottom-menu">
+        <hr/>
+        <p>
+            
+                
+                    <a href="&#x2F;blog">Записи</a>
+                    &#183;
+                
+                    <a href="&#x2F;about">Обо мне</a>
+                    &#183;
+                
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;jahamars">GitHub</a>
+                    &#183;
+                
+            
+            <a href="https:&#x2F;&#x2F;jmee.netlify.app">
+                Главная
+            </a>
+        </p>
+    </div>
+
+        
+    
+
+    </div>
+
+    </body>
+</html>

@@ -2,6 +2,10 @@
 title = "Обо мне"
 +++
 
+<div style="text-align: center;">
+    <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
+</div>
+
 ## Привет, я Жахонгир!  
 Студент 2 курса, энтузиаст Linux, Сети, DevOps и InfoSec.
 
