@@ -13,6 +13,10 @@
         <loc>https://jmee.netlify.app/blog/</loc>
     </url>
     <url>
+        <loc>https://jmee.netlify.app/blog/infosec-it-panet-2025/</loc>
+        <lastmod>2025-04-07</lastmod>
+    </url>
+    <url>
         <loc>https://jmee.netlify.app/blog/vim/</loc>
         <lastmod>2025-01-01</lastmod>
     </url>
@@ -24,7 +28,16 @@
         <loc>https://jmee.netlify.app/tags/</loc>
     </url>
     <url>
+        <loc>https://jmee.netlify.app/tags/infosec/</loc>
+    </url>
+    <url>
         <loc>https://jmee.netlify.app/tags/netlify/</loc>
+    </url>
+    <url>
+        <loc>https://jmee.netlify.app/tags/openvpn/</loc>
+    </url>
+    <url>
+        <loc>https://jmee.netlify.app/tags/redos/</loc>
     </url>
     <url>
         <loc>https://jmee.netlify.app/tags/vim/</loc>

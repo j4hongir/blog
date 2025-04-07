@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+
+        <link rel="stylesheet" href="https://jmee.netlify.app/fonts.css">
+        <link rel="stylesheet" href="https://jmee.netlify.app/style.css">
+
+        <title>
+    Решение задание 2 Первый отборочный этап(ИБ IT-Планета 2025)
+</title>
+
+        
+    </head>
+    <body>
+        
+    <div class="wrap">
+        <div class="section" id="title">
+            
+    Решение задание 2 Первый отборочный этап(ИБ IT-Планета 2025)
+
+        </div>
+        <div class="section" id="sections">
+            
+        </div>
+        <div class="section" id="content">
+            
+    
+        
+            
+    
+    07.04.2025
+
+        
+        
+            
+                &#183; 840 words
+            
+        
+        
+            
+            
+                &#183; 5 min
+            
+        
+        
+            <div class="tag-container">
+                Tags :&nbsp;
+                
+                    <span class="tag">
+                        <a href="https://jmee.netlify.app/tags/infosec/">
+                            infosec
+                        </a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://jmee.netlify.app/tags/openvpn/">
+                            openvpn
+                        </a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://jmee.netlify.app/tags/redos/">
+                            redos
+                        </a>
+                    </span>
+                
+            </div>
+        
+        
+        <hr/>
+    
+    <h1 id="zadanie">Задание</h1>
+<p>Компания пригласила вас для выполнения настройки компонентов обеспечения информационной безопасности. В компании было закуплены новые компьютеры, на которых было установлена операционная система REDOS. Ваша задача – настроить межсетевое экранирование, виртуальную частную сеть. В сети участвуют два компьютера через открыто локальную сеть 10.0.0.0/24. Туннель должен быть 10.1.1.0/32. Туннель поднимается автоматически после запуска машины (планировщик задания). Условные обозначения – Компьютер А и Компьютер Б. На компьютере А установлено два интерфейса, один из которых может ходить в глобальную сеть, компьютер Б ходит в глобальную сеть через компьютер А. На компьютере А настроен NAT. Настройки межсетевого экранирования настраивается средством iptables и применяются каждый раз как перезагружается компьютер. Компания не хочет, что бы пользователи ходили на ресурсы социальных сетей (vk, ok, mail). Трафик по туннелю должен быть зашифрован и использовалась программа openvpn. По результатам работы необходимо подготовить отчет, где необходимо отобразить все ваши действия и где каждый раздел отмечает настройку отдельного компонента или технологии. Каждый раздел должен быть протестирован.</p>
+<h1 id="reshenie">Решение</h1>
+<h2 id="sreda">Среда</h2>
+<p>Изначально мне надо поднять среду где мы будем делать все эти монипуляции , операционка у нас REDos (server) средство виртуализации virtualbox
+я решил использовать только cli</p>
+<p>вот такие настройки виртуальных машин я ставил</p>
+<p><img src="https://i.ibb.co/Z6Wt94sc/Pasted-image-20250318214733.png" alt="pi" /></p>
+<p>настройки виртуальной машины для сервера</p>
+<p><img src="https://i.ibb.co/23dK3XBM/Pasted-image-20250318214757.png" alt="pi" />
+настройки для клиента</p>
+<p>также использовал функцию port forwarding чтобы удобно подключится из внешнего терминала
+также я послу запуска запустил sshd сервис на обоих машинах чтобы легко подключится с одного на другое</p>
+<p>все команды которые выводятся выполнился под root</p>
+<h2 id="seti">сети</h2>
+<p>сразу же после запуска надо настроит сети , так как в redos есть демон network manager по дефолту будем использовать его</p>
+<h3 id="nastroiki-dlia-servera">настройки для сервера</h3>
+<p>настройка для интерфейса который имеет доступ к интернету и получает ip по dhcp</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">sudo</span><span> nmcli connection modify enp0s3 ipv4.method auto
+</span><span style="color:#bf616a;">sudo</span><span> nmcli connection up enp0s3
+</span></code></pre>
+<p>настройка для интерфейса который смотрит внутрь и получает ip статично</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">sudo</span><span> nmcli connection add type ethernet con-name intranet ifname enp0s8 ipv4.addresses 10.0.0.1/24 ipv4.method manual
+</span><span style="color:#bf616a;">sudo</span><span> nmcli connection up intranet
+</span></code></pre>
+<h3 id="nastroiki-klienta">настройки клиента</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">sudo</span><span> nmcli connection add type ethernet con-name intranet ifname enp0s3 ipv4.addresses 10.0.0.2/24 ipv4.gateway 10.0.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
+</span><span style="color:#bf616a;">sudo</span><span> nmcli connection up intranet
+</span></code></pre>
+<h3 id="proveriaem-chto-vse-nastroiki-primenilis">проверяем что все настройки применились</h3>
+<p>настройки сети для сервера</p>
+<p><img src="https://i.ibb.co/S4zHSvQL/Pasted-image-20250318215819.png" alt="pi" /></p>
+<p>настройки клиента</p>
+<p><img src="https://i.ibb.co/bjv4VHgP/Pasted-image-20250318220315.png" alt="pi" /></p>
+<p>проверяем ping</p>
+<p>на клиенте
+<img src="https://i.ibb.co/zWcqYfpB/Pasted-image-20250318220409.png" alt="pi" /></p>
+<p>на сервере
+<img src="https://i.ibb.co/7TWRtfV/Pasted-image-20250318220459.png" alt="pi" /></p>
+<p>клиент пингует сервера , сервер пингует клиента и также google
+все стабильно идем дальше</p>
+<h2 id="utility">утилиты</h2>
+<p>как только мы настроили интернет качаем пакеты</p>
+<p>для сервера</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>dnf install wget  # для скачывание easy-rsa 
+</span><span>dnf install openvpn # vpn 
+</span><span>dnf install iptables-services # deamon для автозапуска iptables 
+</span><span>dnf install traceroute # для проверки 
+</span></code></pre>
+<p>для клиента</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>dnf install openvpn
+</span></code></pre>
+<p>также нам нужен будет easy-rsa о нем я упомянул ниже в этапе настройки</p>
+<p><img src="https://i.ibb.co/QF0j2cCM/Pasted-image-20250318221326.png" alt="pi" /></p>
+<p>у обоих машинах все установился нормально без заморочек идем дальше</p>
+<h2 id="nastroika-openvpn-servera-klienta-i-iptables">настройка openvpn сервера, клиента  и iptables</h2>
+<p>для генерации ключей центров сертификаций и прочей возни для безопасности качаем easy-rsa как архив</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">wget</span><span> https://github.com/OpenVPN/easy-rsa/archive/master.zip
+</span></code></pre>
+<p>распакуем</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">unzip</span><span> master.zip
+</span></code></pre>
+<p><img src="https://i.ibb.co/S7HBS9v2/Pasted-image-20250318221722.png" alt="pi" /></p>
+<p>и в итоге у нас вот такой tree директории c easy-rsa</p>
+<pre data-lang="accsi" style="background-color:#2b303b;color:#c0c5ce;" class="language-accsi "><code class="language-accsi" data-lang="accsi"><span>
+</span><span>[root@vbox ]# cd easy-rsa-master/
+</span><span>[root@vbox ]# tree
+</span><span>
+</span><span>├── build
+</span><span>│   ├── build-dist.sh
+</span><span>│   └── Building.md
+</span><span>├── ChangeLog
+</span><span>├── COPYING.md
+</span><span>├── distro
+</span><span>│   ├── README
+</span><span>│   └── windows
+</span><span>├── doc
+</span><span>├── easyrsa3
+</span><span>│   ├── easyrsa
+</span><span>│   ├── openssl-easyrsa.cnf
+</span><span>│   ├── vars.example
+</span><span>│   └── x509-types
+</span><span>│       ├── ca
+</span><span>│       ├── client
+</span><span>│       ├── code-signing
+</span><span>│       ├── COMMON
+</span><span>│       ├── email
+</span><span>│       ├── kdc
+</span><span>│       ├── server
+</span><span>│       └── serverClient
+</span><span>├── KNOWN_ISSUES
+</span><span>├── Licensing
+</span><span>│   └── gpl-2.0.txt
+</span><span>├── op-test.sh
+</span><span>├── README.md
+</span><span>├── README.quickstart.md
+</span><span>├── release-keys
+</span><span>│   └── README.md
+</span><span>├── wop-test.bat
+</span><span>└── wop-test.sh
+</span></code></pre>
+<p>нас интересует папка easyrsa3 далше все действие делаем именна из нее</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Инициализация PKI
+</span><span style="color:#bf616a;">./easyrsa</span><span> init-pki
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Создание CA
+</span><span style="color:#bf616a;">./easyrsa</span><span> build-ca
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Создание сертификата сервера
+</span><span style="color:#bf616a;">./easyrsa</span><span> build-server-full server nopass
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Создание сертификата клиента
+</span><span style="color:#bf616a;">./easyrsa</span><span> build-client-full client nopass
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Создание файла DH
+</span><span style="color:#bf616a;">./easyrsa</span><span> gen-dh
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Создание TLS-ключа
+</span><span style="color:#bf616a;">openvpn --genkey --secret</span><span> pki/ta.key
+</span></code></pre>
+<p>далее создаем нужные директории и переносим все ключи туда</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span># Копирование файлов сервера
+</span><span>cp pki/ca.crt /etc/openvpn/server/
+</span><span>cp pki/issued/server.crt /etc/openvpn/server/
+</span><span>cp pki/private/server.key /etc/openvpn/server/
+</span><span>cp pki/dh.pem /etc/openvpn/server/
+</span><span>cp pki/ta.key /etc/openvpn/server/
+</span><span>
+</span><span># Копирование файлов клиента в отдельную директорию
+</span><span>cp pki/ca.crt /etc/openvpn/client/
+</span><span>cp pki/issued/client.crt /etc/openvpn/client/
+</span><span>cp pki/private/client.key /etc/openvpn/client/
+</span><span>cp pki/ta.key /etc/openvpn/client/
+</span></code></pre>
+<p>да у меня на сервере есть директория клиента позже объясню зачем я не передавал напрямую</p>
+<p>конфигурационный файл для сервера</p>
+<p>/etc/openvpn/server/server.conf</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>port 1194
+</span><span>proto udp
+</span><span>dev tun
+</span><span>ca ca.crt
+</span><span>cert server.crt
+</span><span>key server.key
+</span><span>dh dh.pem
+</span><span>server 10.1.1.0 255.255.255.0
+</span><span>ifconfig-pool-persist ipp.txt
+</span><span>push &quot;redirect-gateway def1 bypass-dhcp&quot;
+</span><span>push &quot;dhcp-option DNS 8.8.8.8&quot;
+</span><span>push &quot;dhcp-option DNS 8.8.4.4&quot;
+</span><span>keepalive 10 120
+</span><span>tls-auth ta.key 0
+</span><span>cipher AES-256-CBC
+</span><span>auth SHA256
+</span><span>compress lz4-v2
+</span><span>push &quot;compress lz4-v2&quot;
+</span><span>user nobody
+</span><span>group nobody
+</span><span>persist-key
+</span><span>persist-tun
+</span><span>status openvpn-status.log
+</span><span>verb 3
+</span></code></pre>
+<p>конфиг для клиента</p>
+<p>/etc/openvpn/client/client.conf</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>client
+</span><span>dev tun
+</span><span>proto udp
+</span><span>remote 10.0.0.1 1194
+</span><span>resolv-retry infinite
+</span><span>nobind
+</span><span>persist-key
+</span><span>persist-tun
+</span><span>remote-cert-tls server
+</span><span>cipher AES-256-CBC
+</span><span>auth SHA256
+</span><span>compress lz4-v2
+</span><span>verb 3
+</span></code></pre>
+<p>дальше я написал простой скрипт на bash чтобы прописать в конфиг клиента ключи чтобы не ташить их отдельно</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">eecho </span><span>&#39;</span><span style="color:#a3be8c;">&lt;ca&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#bf616a;">cat</span><span> /etc/openvpn/client/ca.crt &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;/ca&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span>
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;cert&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#bf616a;">cat</span><span> /etc/openvpn/client/client.crt &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;/cert&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span>
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;key&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#bf616a;">cat</span><span> /etc/openvpn/client/client.key &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;/key&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span>
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;tls-auth&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#bf616a;">cat</span><span> /etc/openvpn/client/ta.key &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">&lt;/tls-auth&gt;</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">key-direction 1</span><span>&#39; &gt;&gt; /etc/openvpn/client/client.conf
+</span><span>
+</span></code></pre>
+<p>помните мы копировали в директория client клуючи для клиента они как раз для этого</p>
+<p>даем права для запуска и запускаем скрипт и если скрипт молчит и не показывает ничего то все хорошо</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>chmod +x ./script.sh
+</span><span>./script.sh
+</span></code></pre>
+<p>в итоге у нас получится такой длинный конфиг со всемы нужными публичными ключами
+<img src="https://i.ibb.co/Qvwc11mV/Pasted-image-20250318223629.png" alt="pi" />
+это не все но поверте мне на слово</p>
+<p>в итоге у нас получилось вот такой tree</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>client  easy-rsa-master  master.zip  server
+</span><span>[root@vbox openvpn]# tree
+</span><span>.
+</span><span>├── client
+</span><span>│   ├── ca.crt
+</span><span>│   ├── client.crt
+</span><span>│   ├── client.key
+</span><span>│   ├── client.conf
+</span><span>│   ├── hmm.sh
+</span><span>│   └── ta.key
+</span><span>├── easy-rsa-master
+</span><span>│   ├── build
+</span><span>│   │   ├── build-dist.sh
+</span><span>│   │   └── Building.md
+</span><span>│   ├── ChangeLog
+</span><span>│   ├── COPYING.md
+</span><span>│   ├── distro
+</span><span>│   │   ├── README
+</span><span>│   │   └── windows
+</span><span>│   ├── doc
+</span><span>│   │   ├── EasyRSA-Advanced.md
+</span><span>│   │   ├── EasyRSA-Contributing.md
+</span><span>│   │   ├── EasyRSA-Readme.md
+</span><span>│   │   ├── EasyRSA-Renew-and-Revoke.md
+</span><span>│   │   ├── EasyRSA-Upgrade-Notes.md
+</span><span>│   │   ├── Hacking.md
+</span><span>│   │   ├── Intro-To-PKI.md
+</span><span>│   │   └── TODO
+</span><span>│   ├── easyrsa3
+</span><span>│   │   ├── easyrsa
+</span><span>│   │   ├── openssl-easyrsa.cnf
+</span><span>│   │   ├── pki
+</span><span>│   │   │   ├── ca.crt
+</span><span>│   │   │   ├── certs_by_serial
+</span><span>│   │   │   │   ├── 2C889B5BBEB0183E1F9C3F061209C4FE.pem
+</span><span>│   │   │   │   └── 2D557E13C414164291D000A634D7EF48.pem
+</span><span>│   │   │   ├── dh.pem
+</span><span>│   │   │   ├── index.txt
+</span><span>│   │   │   ├── index.txt.attr
+</span><span>│   │   │   ├── index.txt.attr.old
+</span><span>│   │   │   ├── index.txt.old
+</span><span>│   │   │   ├── inline
+</span><span>│   │   │   │   └── private
+</span><span>│   │   │   │       ├── client.inline
+</span><span>│   │   │   │       ├── README.inline.private
+</span><span>│   │   │   │       └── server.inline
+</span><span>│   │   │   ├── issued
+</span><span>│   │   │   │   ├── client.crt
+</span><span>│   │   │   │   └── server.crt
+</span><span>│   │   │   ├── private
+</span><span>│   │   │   │   ├── ca.key
+</span><span>│   │   │   │   ├── client.key
+</span><span>│   │   │   │   └── server.key
+</span><span>│   │   │   ├── reqs
+</span><span>│   │   │   │   ├── client.req
+</span><span>│   │   │   │   └── server.req
+</span><span>│   │   │   ├── revoked
+</span><span>│   │   │   │   ├── certs_by_serial
+</span><span>│   │   │   │   └── private_by_serial
+</span><span>│   │   │   ├── serial
+</span><span>│   │   │   ├── serial.old
+</span><span>│   │   │   ├── ta.key
+</span><span>│   │   │   └── vars.example
+</span><span>│   │   ├── vars.example
+</span><span>│   │   └── x509-types
+</span><span>│   │       ├── ca
+</span><span>│   │       ├── client
+</span><span>│   │       ├── code-signing
+</span><span>│   │       ├── COMMON
+</span><span>│   │       ├── email
+</span><span>│   │       ├── kdc
+</span><span>│   │       ├── server
+</span><span>│   │       └── serverClient
+</span><span>│   ├── KNOWN_ISSUES
+</span><span>│   ├── Licensing
+</span><span>│   │   └── gpl-2.0.txt
+</span><span>│   ├── op-test.sh
+</span><span>│   ├── README.md
+</span><span>│   ├── README.quickstart.md
+</span><span>│   ├── release-keys
+</span><span>│   │   └── README.md
+</span><span>│   ├── wop-test.bat
+</span><span>│   └── wop-test.sh
+</span><span>├── master.zip
+</span><span>└── server
+</span><span>    ├── ca.crt
+</span><span>    ├── dh.pem
+</span><span>    ├── ipp.txt
+</span><span>    ├── openvpn-status.log
+</span><span>    ├── server.conf
+</span><span>    ├── server.crt
+</span><span>    ├── server.key
+</span><span>    ├── ta.key
+</span><span>    └── tut.conf
+</span><span>
+</span><span>26 directories, 97 files
+</span><span>[root@vbox openvpn]# 
+</span></code></pre>
+<p>передаем конфиг клиента по ssh</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>scp /etc/openvpn/client/client.conf root@10.0.0.2:/etc/openvpn/client/
+</span><span>
+</span></code></pre>
+<p>в клиенте все легко</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>[root@localhost openvpn]# tree
+</span><span>.
+</span><span>└─── client
+</span><span>      └── client.conf
+</span></code></pre>
+<h3 id="nastroika-iptables">Настройка iptables</h3>
+<p>настроим NAT</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>iptables -t nat -A POSTROUTING -s 10.1.1.0/24 -o eth0 -j MASQUERADE
+</span><span>iptables -A FORWARD -i tun0 -o eth0 -j ACCEPT
+</span><span>iptables -A FORWARD -i eth0 -o tun0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+</span></code></pre>
+<p>запретим указанных сайтав</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>iptables -A FORWARD -d vk.com -j REJECT
+</span><span>iptables -A FORWARD -d ok.ru -j REJECT
+</span><span>iptables -A FORWARD -d mail.ru -j REJECT
+</span></code></pre>
+<p>и сохранение для автозапуска</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>iptables-save &gt; /etc/sysconfig/iptables
+</span></code></pre>
+<p>и ставим на автозапуск</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">systemctl</span><span> enable iptables
+</span></code></pre>
+<h2 id="zapusk">Запуск</h2>
+<p>далее все запускаем</p>
+<p>сервер</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">systemctl</span><span> start openvpn-server@server
+</span></code></pre>
+<p>клиент</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">systemctl</span><span> start openvpn-client@client
+</span></code></pre>
+<p>проверяем</p>
+<p>на серврере</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>systemctl status openvpn-server@server
+</span></code></pre>
+<p><img src="https://i.ibb.co/Ld7BPC0x/Pasted-image-20250318225301.png" alt="pi" /></p>
+<p>на клиенте</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">systemctl</span><span> status  openvpn-client@client
+</span></code></pre>
+<p><img src="https://i.ibb.co/1GCHcWKB/Pasted-image-20250318225409.png" alt="pi" /></p>
+<h2 id="avtozapusk">автозапуск</h2>
+<p>на сервере есть два сервиса или демона для автозапуска это</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>systemctl enable openvpn-server@server  # для openvpn
+</span><span>systemctl enable iptables  # для iptables его мы отдельно скачали в начале 
+</span></code></pre>
+<p>а на клиенте 1</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>systemctl enable openvpn-client@client
+</span></code></pre>
+<p>теперь каждый при перезапуске поднимается tunel и применяется настройки iptables автоматически</p>
+<h2 id="proverka">проверка</h2>
+<p>самое главно зачем мы суюда шли проверка что все корректно работает</p>
+<p>я переименовал устройства чтобы было проше различить</p>
+<p>настройки сети</p>
+<p>сервер
+<img src="https://i.ibb.co/8LXKw1W4/Pasted-image-20250318231058.png" alt="pi" /></p>
+<p>клиент
+<img src="https://i.ibb.co/jvzTk60V/Pasted-image-20250318231119.png" alt="pi" /></p>
+<p>как вы видите в обоих машинах появился интерфейс tun0 с нужным нам ip адресами это хороший знак</p>
+<p>также они пингуют друг друга по тунели
+<img src="https://i.ibb.co/TqM2Qn93/Pasted-image-20250318231958.png" alt="pi" /></p>
+<p>для проверки настроек iptables</p>
+<p><img src="https://i.ibb.co/mrhNH20g/Pasted-image-20250318231335.png" alt="pi" /></p>
+<p>как вы видите ниже firewall который мы настроили не дает доступ заданным сайтам ok.ru mail.ru vk.ru
+но дает доступ к сайтам google.com и ya.ru так и надо было
+<img src="https://i.ibb.co/dJwHGs5y/Pasted-image-20250318231728.png" alt="pi" /></p>
+<p>traceroute
+<img src="https://i.ibb.co/8gdLy8c2/Pasted-image-20250318232141.png" alt="pi" /></p>
+<p>здесь мы видим полный путь откуда проходит наш трафик</p>
+<p>там и наш tunel 10.1.1.1 это значит подключение правильно настроено и все хорошо</p>
+<p>вот и все</p>
+<h2 id="spisok-literatury">Список литературы</h2>
+<p>https://redos.red-soft.ru/base/redos-8_0/8_0-network/8_0-sett-vpn/8_0-openvpn/
+https://gist.github.com/laurenorsini/9925434
+https://habr.com/ru/articles/233971/
+https://help.ubuntu.ru/wiki/openvpn</p>
+
+
+        </div>
+        
+    <div class="section bottom-menu">
+        <hr/>
+        <p>
+            
+                
+                    <a href="&#x2F;blog">Записи</a>
+                    &#183;
+                
+                    <a href="&#x2F;about">Обо мне</a>
+                    &#183;
+                
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;jahamars">GitHub</a>
+                    &#183;
+                
+            
+            <a href="https:&#x2F;&#x2F;jmee.netlify.app">
+                Главная
+            </a>
+        </p>
+    </div>
+
+        
+    
+
+    </div>
+
+    </body>
+</html>
