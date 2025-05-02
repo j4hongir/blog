@@ -21,10 +21,6 @@
         <lastmod>2025-04-07</lastmod>
     </url>
     <url>
-        <loc>https://jmee.netlify.app/blog/vim/</loc>
-        <lastmod>2025-01-01</lastmod>
-    </url>
-    <url>
         <loc>https://jmee.netlify.app/blog/zola/</loc>
         <lastmod>2025-03-08</lastmod>
     </url>
@@ -51,9 +47,6 @@
     </url>
     <url>
         <loc>https://jmee.netlify.app/tags/ssh/</loc>
-    </url>
-    <url>
-        <loc>https://jmee.netlify.app/tags/vim/</loc>
     </url>
     <url>
         <loc>https://jmee.netlify.app/tags/zola/</loc>
