@@ -6,8 +6,10 @@ title = "Обо мне"
     <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
 </div>
 
-## Привет, я Жахонгир!  
+## **As-salamu ʿalaykum** , я Жахонгир 
+
 энтузиаст Linux, Сети, DevOps и InfoSec.
+
 Тут я делюсь своими заметками, мыслями, кодом и проектами.  
 
 В заметках могут быть косяки, опечатки или мои кривые трактовки, так что не придирайтесь особо!  

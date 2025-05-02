@@ -77,7 +77,7 @@ ssh-copy-id ansible@192.168.1.12
 mkdir -p /etc/ansible/ITPlanet # дальше будем работать в директории /etc/ansible
 ```
 
-Файл main.ymlhttps://i.ibb.co/0pLhcFTm/Pasted-image-20250309225645.png
+Файл main.yml
 
 ```
 - name: get info
@@ -134,7 +134,7 @@ ansible_user=ansible
 ansible-playbook main.yml
 ```
 
-![[Pasted image 20250309225607.png]]
+![](https://i.ibb.co/hRgDZn86/Pasted-image-20250309225607.png)
 
 Итог:
 ![](https://i.ibb.co/0pLhcFTm/Pasted-image-20250309225645.png)
