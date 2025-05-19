@@ -8,11 +8,11 @@ title = "Обо мне"
 
 ## Я Джахонгир
 
-Энтузиаст Linux, Networks, DevOps и InfoSec.
+энтузиаст Linux, Networks, DevOps и InfoSec.
 
 ## Здесь
 
-Я делюсь своими
+я делюсь своими
     - заметками,
     - кейсами,
     - гайдами,
