@@ -6,16 +6,23 @@ title = "Обо мне"
     <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
 </div>
 
-## **As-salamu ʿalaykum** , я Жахонгир 
+## Я Джахонгир
 
-энтузиаст Linux, Сети, DevOps и InfoSec.
+Энтузиаст Linux, Networks, DevOps и InfoSec.
 
-Тут я делюсь своими заметками, мыслями, кодом и проектами.  
+## Здесь
 
-В заметках могут быть косяки, опечатки или мои кривые трактовки, так что не придирайтесь особо!  
+Я делюсь своими
+    - заметками,
+    - кейсами,
+    - гайдами,
+    - кодом, проектами
 
-Если есть вопросы, хотите исправить, добавить новые идеи — смело обращайтесь.  
+Если есть вопросы, правки, дополнения — смело обращайтесь.
+
+
+- [telegram](https://t.me/gruvboxx)
+- [resume](https://jahamars.github.io)  
+- [achievements](https://jahamars.github.io/sert/)  
 - [github](https://github.com/jahamars)  
 - [email](mailto:jahamarsi@gmail.com)  
-- [resume](https://jahamars.github.io)  
-- [telegram](https://t.me/gruvboxx)
