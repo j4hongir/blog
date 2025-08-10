@@ -39,7 +39,7 @@
         
         
             
-                &#183; 226 words
+                &#183; 223 words
             
         
         
@@ -120,7 +120,7 @@
 <p><img src="https://i.ibb.co/7t6kvsbd/Pasted-image-20250309224858.png" alt="" /></p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">mkdir -p</span><span> /etc/ansible/ITPlanet </span><span style="color:#65737e;"># дальше будем работать в директории /etc/ansible
 </span></code></pre>
-<p>Файл main.ymlhttps://i.ibb.co/0pLhcFTm/Pasted-image-20250309225645.png</p>
+<p>Файл main.yml</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>- name: get info
 </span><span>  hosts: clients
 </span><span>  become: yes  # Используем привилегии root
@@ -166,7 +166,7 @@
 <p>Дальше запускаем playbook:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">ansible-playbook</span><span> main.yml
 </span></code></pre>
-<p>![[Pasted image 20250309225607.png]]</p>
+<p><img src="https://i.ibb.co/hRgDZn86/Pasted-image-20250309225607.png" alt="" /></p>
 <p>Итог:
 <img src="https://i.ibb.co/0pLhcFTm/Pasted-image-20250309225645.png" alt="" /></p>
 
