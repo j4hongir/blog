@@ -1,8 +1,8 @@
 +++
 title = "Три урока тайм-менеджмента от компьютеров"
-date = 2025-04-07
+date = 2025-11-04
 [taxonomies]
-tags = ["ansible", "ssh", "debian"]
+tags = ["time management", "productivity"]
 +++
 
 
@@ -42,4 +42,4 @@ tags = ["ansible", "ssh", "debian"]
 
 ---
 
-*Материал основан на лекции TED ["How to manage your time more effectively (according to machines)"](https://www.ted.com/talks/) — Brian Christian. Перевод и адаптация на русский язык.*
+*Материал основан на лекции TED ["How to manage your time more effectively (according to machines)"](https://www.ted.com/talks/brian_christian_how_to_manage_your_time_more_effectively_according_to_machines) — Brian Christian. Перевод и адаптация на русский язык.*
