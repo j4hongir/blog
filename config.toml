@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://jmee.netlify.app"
+base_url = "https://jahongir.ru"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -27,13 +27,13 @@ smart_punctuation = true
 highlight_code = true
 
 [extra]
-date_format = "%d.%m.%Y"  # Например, 08.03.2025
+date_format = "%d.%m.%Y"  #  08.03.2025
 home = "Главная"
 sam_menu = [
     { text = "Записи", link = "/blog" },
     { text = "Обо мне", link = "https://jahamars.github.io" },
     # { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
-    { text = "Сертификаты и достижения", link = "https://jahamars.github.io/sert" }
+    { text = "Ачивки", link = "https://jahamars.github.io/sert" }
 ]
 
