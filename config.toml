@@ -30,7 +30,7 @@ highlight_code = true
 date_format = "%d.%m.%Y"  #  08.03.2025
 home = "Главная"
 sam_menu = [
-    { text = "Записи", link = "/blog" },
+    { text = "Заметки", link = "/blog" },
     { text = "Обо мне", link = "https://jahamars.github.io" },
     # { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
