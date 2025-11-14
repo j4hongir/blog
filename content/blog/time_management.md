@@ -1,6 +1,8 @@
 +++
 title = "Три урока тайм-менеджмента от компьютеров"
 date = 2025-11-04
+[taxonomies]
+tags = ["time management", "productivity"]
 +++
 
 

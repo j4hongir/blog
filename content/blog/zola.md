@@ -1,6 +1,8 @@
 +++
 title = "Блог на Zola и Netlify"
 date = 2025-03-08
+[taxonomies]
+tags = ["netlify", "zola"]
 +++
 
 
