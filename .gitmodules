@@ -1,3 +1,6 @@
 [submodule "themes/sam"]
 	path = themes/sam
 	url = https://github.com/janbaudisch/zola-sam.git
+[submodule "themes/papermod"]
+	path = themes/papermod
+	url = https://github.com/cydave/zola-theme-papermod
