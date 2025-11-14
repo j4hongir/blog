@@ -1,23 +1,15 @@
-# The URL the site will be built for
 base_url = "https://jahongir.ru"
-
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
 theme = "lekhz"
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-
-taxonomies = [
-{ name = "tags", rss = true },
-{ name = "authors", rss = true }
-]
+# УДАЛИТЕ taxonomies - lekhz не использует их
+# taxonomies = [
+# { name = "tags", rss = true },
+# { name = "authors", rss = true }
+# ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-
 highlight_theme = "base16-ocean-dark"
 render_emoji = true
 external_links_target_blank = true
@@ -27,13 +19,18 @@ smart_punctuation = true
 highlight_code = true
 
 [extra]
-date_format = "%d.%m.%Y"  #  08.03.2025
-home = "Главная"
-sam_menu = [
-    { text = "Заметки", link = "/blog" },
-    { text = "Обо мне", link = "https://jahamars.github.io" },
-    # { text = "Обо мне", link = "/about" },
-    { text = "GitHub", link = "https://github.com/jahamars" },
-    { text = "Ачивки", link = "https://jahamars.github.io/sert" }
+# Настройки для темы lekhz
+lekhz_name = "Jahongir"
+lekhz_about = "Мой личный блог о технологиях и разработке"
+lekhz_email = "your-email@example.com"
+lekhz_resume = "resume.pdf"
+lekhz_post_limit = 5
+
+# Социальные профили
+lekhz_profiles = [
+    { name = "GitHub", url = "https://github.com/jahamars" },
+    { name = "Portfolio", url = "https://jahamars.github.io" },
+    { name = "Certificates", url = "https://jahamars.github.io/sert" }
 ]
 
+# lekhz_goatcounter_code = ""  # Опционально для аналитики
