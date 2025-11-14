@@ -4,3 +4,6 @@
 [submodule "themes/papermod"]
 	path = themes/papermod
 	url = https://github.com/cydave/zola-theme-papermod
+[submodule "themes/lekhz"]
+	path = themes/lekhz
+	url = https://github.com/ba11b0y/lekhz.git
