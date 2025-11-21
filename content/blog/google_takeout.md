@@ -1,7 +1,7 @@
 
 +++
 title = "Как я однажды победил YouTube Music"
-date = 2025-21-11
+date = 2025-11-21
 [taxonomies]
 tags = ["humor", "automation"]
 +++
