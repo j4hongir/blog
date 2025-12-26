@@ -1,6 +1,6 @@
 +++
 title = "K3s за 5 минут"
-date = 2025-27-12
+date = 2025-12-27
 [taxonomies]
 tags = ["k3s", "k8s", "guide"]
 +++
