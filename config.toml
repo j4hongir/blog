@@ -31,8 +31,7 @@ date_format = "%d.%m.%Y"  #  08.03.2025
 home = "Главная"
 sam_menu = [
     { text = "Заметки", link = "/blog" },
-    { text = "Обо мне", link = "https://jahamars.github.io" },
-    # { text = "Обо мне", link = "/about" },
+    { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
     { text = "Ачивки", link = "https://jahamars.github.io/sert" }
 ]
