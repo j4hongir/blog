@@ -10,3 +10,9 @@
   to = "https://jahamars.github.io/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/sert/*"
+  to = "https://jahamars.github.io/sert/:splat"
+  status = 200
+  force = true
