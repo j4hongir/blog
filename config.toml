@@ -28,6 +28,7 @@ highlight_code = true
 
 [extra]
 date_format = "%d.%m.%Y"  #  08.03.2025
+comments = true
 home = "Главная"
 sam_menu = [
     { text = "Заметки", link = "/blog" },
