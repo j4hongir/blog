@@ -34,6 +34,6 @@ sam_menu = [
     { text = "Заметки", link = "/blog" },
     { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
-    { text = "Ачивки", link = "github.com" }
+    { text = "Ачивки", link = "/sert" }
 ]
 
