@@ -5,7 +5,7 @@ title = "Обо мне"
 # Jahongir Ahmadaliev
 
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="Jahongir Ahmadaliev" style="border-radius: 50%; width: 5%;"/>
+  <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="Jahongir Ahmadaliev" style="border-radius: 20%; width: 20%;"/>
 </div>
 [Email](mailto:jahamarsi@gmail.com) • [Telegram](https://t.me/xpltt) • [GitHub](https://github.com/jahamars) • [Blog](https://jahongir.ru) • [Achievements](https://jahongir.ru/sert)
 
