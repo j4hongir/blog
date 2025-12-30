@@ -37,3 +37,8 @@ sam_menu = [
     { text = "Ачивки", link = "/sert" }
 ]
 
+
+sam_bottom_menu = true
+show_word_count = true
+show_reading_time = true
+
