@@ -13,6 +13,7 @@ title = "Обо мне"
 Более подробно — в моем  [резюме](https://github.com/Jahamars/sert/raw/main/resume/new.pdf)
 
 Доп ссылки: 
+- [Ачивки](jahongir.ru/sert)  
 - [Email](mailto:jahamarsi@gmail.com)  
 - [Telegram](https://t.me/xpltt)
 - [GitHub](https://github.com/jahamars/)  
