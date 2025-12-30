@@ -4,7 +4,7 @@ title = "Обо мне"
 
 
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="Jahongir Ahmadaliev" style="border-radius: 50%; width: 20%;"/>
+  <img src="https://avatars.githubusercontent.com/u/146427118?v=4" alt="Jahongir Ahmadaliev" style="border-radius: 20%; width: 30%;"/>
 </div>
 
 ## я Жахонгир 
