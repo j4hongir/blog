@@ -17,6 +17,7 @@ title = "Обо мне"
 - [Email](mailto:jahamarsi@gmail.com)  
 - [Telegram](https://t.me/xpltt)
 - [GitHub](https://github.com/jahamars/)  
+- [Habr](https://habr.com/ru/users/xpltt/)  
 - [Linux Foundation](https://openprofile.dev/profile/jahamars)  
 - [Credly](https://www.credly.com/users/jahongir/)  
 - [Cybrary](https://app.cybrary.it/profile/jahamarsi)  
@@ -25,4 +26,8 @@ title = "Обо мне"
 - [Docker Hub](https://hub.docker.com/u/jahamars)  
 - [GitLab](https://gitlab.com/jahamarsi1)
 - [Monkeytype](https://monkeytype.com/profile/gruvboxx)
+
+apps:
+- [bybit p2p profit analytics](https://jahamars.github.io/p2pcall/)
+- [Terraform Log Analyzer](https://jahamars.github.io/SectorJ04/)
 
