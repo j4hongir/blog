@@ -11,7 +11,7 @@ title = "Обо мне"
 Занимаюсь безопасностью и надежностью инфраструктуры. Здесь я собираю всё полезное из своего опыта.
 Интересуюсь позициями DevOps, Cloud Engineer, SRE и системного администратора.
 Более подробно — в моем  [резюме](https://github.com/Jahamars/sert/raw/main/resume/new.pdf)
- 
+
 Доп ссылки: 
 - [Ачивки](jahongir.ru/sert)  
 - [Email](mailto:jahamarsi@gmail.com)  
