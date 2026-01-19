@@ -100,7 +100,7 @@ tags = ["networking", "cheatsheet"]
 | **Адрес назначения**<br><br>  <br><br>(Destination Address) | 128              | Куда идет.                                                                                                        | Глобальный Unicast или Multicast адрес.                                                                   |
 
 
-
+# ethernet header
 
 |Поле (Field)|Размер (Бит)|Логика и Назначение|Что там может быть / Контекст|
 |---|---|---|---|
