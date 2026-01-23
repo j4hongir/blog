@@ -1,30 +1,25 @@
 # The URL the site will be built for
 base_url = "https://jahongir.ru"
-
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
 theme = "sam"
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
-
-
 taxonomies = [
 { name = "tags", rss = true },
 { name = "authors", rss = true }
 ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-
-highlight_theme = "base16-ocean-dark"
 render_emoji = true
 external_links_target_blank = true
 external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = true
-highlight_code = true
+
+# [markdown.highlighting]
+# enabled = true
+# theme = "base16-ocean-dark"
 
 [extra]
 date_format = "%d.%m.%Y"  #  08.03.2025
@@ -36,9 +31,6 @@ sam_menu = [
     { text = "GitHub", link = "https://github.com/jahamars" },
     { text = "Ачивки", link = "/sert" }
 ]
-
-
 sam_bottom_menu = true
 show_word_count = true
 show_reading_time = true
-
