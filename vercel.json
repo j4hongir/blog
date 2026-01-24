@@ -13,29 +13,24 @@
       "destination": "https://jahamars.github.io/sert/:path*"
     },
     {
+      "source": "/sert",
+      "destination": "https://jahamars.github.io/sert/"
+    },
+    {
       "source": "/p2p/:path*",
       "destination": "https://jahamars.github.io/p2pcall/:path*"
     },
     {
-      "source": "/prism/:path*",
-      "destination": "https://xpltt.vercel.app/:path*"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/sert",
-      "destination": "https://jahamars.github.io/sert/",
-      "permanent": false
+      "source": "/p2p",
+      "destination": "https://jahamars.github.io/p2pcall/"
     },
     {
-      "source": "/p2p",
-      "destination": "https://jahamars.github.io/p2pcall/",
-      "permanent": false
+      "source": "/prism/:path*",
+      "destination": "https://xpltt.vercel.app/:path*"
     },
     {
       "source": "/prism",
-      "destination": "https://xpltt.vercel.app/",
-      "permanent": false
+      "destination": "https://xpltt.vercel.app/"
     }
   ],
   "headers": [
@@ -66,6 +61,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/favicon/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
         }
       ]
     }

@@ -1,16 +1,23 @@
 # The URL the site will be built for
 base_url = "https://jahongir.ru"
+
+# Build settings
 compile_sass = true
-minify_html = false
+minify_html = true  # Включено для производительности
 generate_robots_txt = true
 generate_feeds = true
-feed_filenames = ["rss.xml"]
-title = "welcome dude"
+feed_filenames = ["rss.xml", "atom.xml"]  # RSS и Atom feeds
+
+# Site info
+title = "welcome"
 description = "это личный блог про технологии"
 default_language = "ru"
 theme = "prism"
+
+# Search
 build_search_index = true
 
+# Taxonomies
 taxonomies = [
     { name = "tags", feed = true },
     { name = "authors", feed = true }
@@ -23,23 +30,26 @@ external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = true
 
-# Правильные настройки для syntax highlighting
 [markdown.highlighting]
-theme = "nord"  # Или используйте вашу тему
+theme = "nord"
 enabled = true
 
-# Альтернативно, для light/dark тем:
-# [markdown.highlighting]
-# light_theme = "github-light"
-# dark_theme = "github-dark"
-
 [extra]
-keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Jahongir Ahmadaliev"
+# SEO
+keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Ansible, Terraform, Jahongir Ahmadaliev, Жахонгир Ахмадалиев"
+author = "Jahongir Ahmadaliev"
 banner = "favicon/android-chrome-512x512.png"
-date_format = "%d.%m.%Y"
-comments = true
-home = "Back"  # ← Изменено на "Back"
 
+# Date format
+date_format = "%d.%m.%Y"
+
+# Features
+comments = true
+home = "Back"
+show_word_count = true
+show_reading_time = true
+
+# Navigation menu
 sam_menu = [
     { text = "Заметки", link = "/blog" },
     { text = "Обо мне", link = "/about" },
@@ -50,8 +60,3 @@ sam_menu = [
 ]
 
 sam_bottom_menu = true
-show_word_count = true
-show_reading_time = true
-
-# [extra.sam_footer]
-# text = "Built with ❤️ using Zola & Prism theme"

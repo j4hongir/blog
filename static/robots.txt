@@ -1,4 +1,26 @@
+# Robots.txt for jahongir.ru
+
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
+# Sitemap
 Sitemap: https://jahongir.ru/sitemap.xml
+
+# RSS Feed
+# https://jahongir.ru/rss.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+User-agent: bingbot
+Allow: /
