@@ -1,21 +1,19 @@
 # The URL the site will be built for
 base_url = "https://jahongir.ru"
-# base_url = "xpltt.vercel.app"
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 minify_html = false
 generate_robots_txt = true
 generate_feeds = true
 feed_filenames = ["rss.xml"]
-title = "Jahongir Ahmadaliev - DevOps Engineer"
-description = "Личный блог про технологии и DevOps практики. Опыт Жахонгира Ахмадалиева."
+title = "welcome dude"
+description = "это личный блог про технологии"
 default_language = "ru"
-theme = "sam"
-# Whether to build a search index to be used later on by a JavaScript library
+theme = "prism"
 build_search_index = true
+
 taxonomies = [
-{ name = "tags", rss = true },
-{ name = "authors", rss = true }
+    { name = "tags", feed = true },
+    { name = "authors", feed = true }
 ]
 
 [markdown]
@@ -25,25 +23,35 @@ external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = true
 
+# Правильные настройки для syntax highlighting
 [markdown.highlighting]
-# enabled = true
-# theme = "nord"
-light_theme = "github-light"                                                                                     
-dark_theme = "github-dark"
+theme = "nord"  # Или используйте вашу тему
+enabled = true
 
+# Альтернативно, для light/dark тем:
+# [markdown.highlighting]
+# light_theme = "github-light"
+# dark_theme = "github-dark"
 
 [extra]
-keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Jahongir Ahmadaliev, Жахонгир Ахмадалиев"
+keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Jahongir Ahmadaliev"
 banner = "favicon/android-chrome-512x512.png"
-date_format = "%d.%m.%Y"  #  08.03.2025
+date_format = "%d.%m.%Y"
 comments = true
-home = "Главная"
+home = "Back"  # ← Изменено на "Back"
+
 sam_menu = [
     { text = "Заметки", link = "/blog" },
     { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
-    { text = "Ачивки", link = "/sert" }
+    { text = "Ачивки", link = "/sert" },
+    { text = "Авторы", link = "/authors" },
+    { text = "Теги", link = "/tags" }
 ]
+
 sam_bottom_menu = true
 show_word_count = true
 show_reading_time = true
+
+# [extra.sam_footer]
+# text = "Built with ❤️ using Zola & Prism theme"
