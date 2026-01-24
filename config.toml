@@ -20,6 +20,7 @@ smart_punctuation = true
 
 [markdown.highlighting]
 enabled = true
+
 theme = "nord"
 
 [extra]
