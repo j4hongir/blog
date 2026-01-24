@@ -3,10 +3,10 @@ base_url = "https://jahongir.ru"
 # base_url = "xpltt.vercel.app"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-minify_html = true
+minify_html = false
 generate_robots_txt = true
-title = "Jahongir Rahmonov"
-description = "Личный блог про SRE, Linux и технологии"
+title = "Jahongir Ahmadaliev"
+description = "Личный блог про технологии"
 default_language = "ru"
 theme = "sam"
 # Whether to build a search index to be used later on by a JavaScript library
