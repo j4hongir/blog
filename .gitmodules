@@ -2,6 +2,3 @@
 	path = themes/sam
 	url = https://github.com/Jahamars/zola-sam.git 
 	branch = main
-[submodule "themes/themes/sam"]
-	path = themes/themes/sam
-	url = https://github.com/Jahamars/zola-sam.git

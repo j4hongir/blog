@@ -14,7 +14,7 @@ title = "Обо мне"
 Более подробно — в моем  [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
 
 Доп ссылки: 
-- [Ачивки](jahongir.ru/sert)  
+- [Ачивки](https://jahongir.ru/sert)  
 - [Email](mailto:jahamarsi@gmail.com)  
 - [Telegram](https://t.me/xpltt)
 - [GitHub](https://github.com/jahamars/)  
@@ -23,12 +23,10 @@ title = "Обо мне"
 - [Credly](https://www.credly.com/users/jahongir/)  
 - [Cybrary](https://app.cybrary.it/profile/jahamarsi)  
 - [Stepik](https://stepik.org/users/575177703/profile)
-- [CodePen](https://codepen.io/jahamarsi)  
 - [Docker Hub](https://hub.docker.com/u/jahamars)  
 - [GitLab](https://gitlab.com/jahamarsi1)
 - [Monkeytype](https://monkeytype.com/profile/gruvboxx)
 
 apps:
 - [bybit p2p profit analytics](https://jahamars.github.io/p2pcall/)
-- [Terraform Log Analyzer](https://jahamars.github.io/SectorJ04/)
 
