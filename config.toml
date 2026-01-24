@@ -7,8 +7,8 @@ minify_html = false
 generate_robots_txt = true
 generate_feeds = true
 feed_filenames = ["rss.xml"]
-title = "Jahongir Ahmadaliev"
-description = "Личный блог про технологии"
+title = "Jahongir Ahmadaliev - DevOps Engineer"
+description = "Личный блог про технологии и DevOps практики. Опыт Жахонгира Ахмадалиева."
 default_language = "ru"
 theme = "sam"
 # Whether to build a search index to be used later on by a JavaScript library
@@ -30,6 +30,8 @@ enabled = true
 theme = "nord"
 
 [extra]
+keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Jahongir Ahmadaliev, Жахонгир Ахмадалиев"
+banner = "favicon/android-chrome-512x512.png"
 date_format = "%d.%m.%Y"  #  08.03.2025
 comments = true
 home = "Главная"

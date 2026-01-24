@@ -21,6 +21,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
     <link rel="stylesheet" href="{{ get_url(path='fonts.css') }}">
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
 
@@ -50,6 +56,36 @@
     {% if config.generate_feeds %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') }}">
     {% endif %}
+    {% if config.extra.keywords %}
+    <meta name="keywords" content="{{ config.extra.keywords }}">
+    {% endif %}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jahongir Ahmadaliev",
+      "url": "{{ config.base_url }}",
+      "sameAs": [
+        "https://github.com/jahamars"
+      ],
+      "jobTitle": "DevOps Engineer",
+      "description": "{{ config.description }}"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ config.title }}",
+      "url": "{{ config.base_url }}",
+      "description": "{{ config.description }}",
+      "author": {
+         "@type": "Person",
+         "name": "Jahongir Ahmadaliev"
+      }
+    }
+    </script>
     {% endblock head %}
 </head>
 
