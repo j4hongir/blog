@@ -1,8 +1,4 @@
 {
-  "framework": null,
-  "installCommand": "git submodule update --init --recursive",
-  "buildCommand": "zola build",
-  "outputDirectory": "public",
   "rewrites": [
     {
       "source": "/sert/:path*",
