@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/sert/:path*",
+      "source": "/((?!.well-known).*)/sert/:path*",
       "destination": "https://jahamars.github.io/sert/:path*"
     }
   ]

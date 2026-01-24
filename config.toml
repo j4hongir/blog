@@ -1,6 +1,6 @@
 # The URL the site will be built for
-# base_url = "https://jahongir.ru"
-base_url = "xpltt.vercel.app"
+base_url = "https://jahongir.ru"
+# base_url = "xpltt.vercel.app"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 theme = "sam"
