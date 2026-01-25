@@ -23,14 +23,6 @@
     {
       "source": "/p2p",
       "destination": "https://jahamars.github.io/p2pcall/"
-    },
-    {
-      "source": "/prism/:path*",
-      "destination": "https://xpltt.vercel.app/:path*"
-    },
-    {
-      "source": "/prism",
-      "destination": "https://xpltt.vercel.app/"
     }
   ],
   "headers": [
