@@ -29,5 +29,6 @@ title = "Обо мне"
 - [Monkeytype](https://monkeytype.com/profile/gruvboxx)
 
 apps:
-- [bybit p2p profit analytics](https://jahamars.github.io/p2pcall/)
+- [bybit p2p profit analytics](https://jahongir.ru/p2pcall/)
+- [Zola Prism theme](https://xpltt.vercel.app/)
 
