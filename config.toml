@@ -9,8 +9,8 @@ generate_feeds = true
 feed_filenames = ["rss.xml", "atom.xml"]  # RSS и Atom feeds
 
 # Site info
-title = "welcome"
-description = "это личный блог про технологии"
+title = "DevSecOps notes"
+description = "блог про технологии, которые работают, пока мы спим"
 default_language = "ru"
 theme = "prism"
 
