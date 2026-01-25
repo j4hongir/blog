@@ -56,7 +56,8 @@ sam_menu = [
     { text = "GitHub", link = "https://github.com/jahamars" },
     { text = "Ачивки", link = "/sert" },
     { text = "Авторы", link = "/authors" },
-    { text = "Теги", link = "/tags" }
+    { text = "RSS", link = "/rss.xml" }
+    # { text = "Теги", link = "/tags" }
 ]
 
 sam_bottom_menu = true

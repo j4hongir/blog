@@ -3,6 +3,8 @@ title = "Три урока тайм-менеджмента от компьюте
 date = 2025-11-04
 [taxonomies]
 tags = ["time management", "productivity"]
+
+authors = ["Brian Christian"]
 +++
 
 
