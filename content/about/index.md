@@ -30,5 +30,6 @@ title = "Обо мне"
 
 apps:
 - [bybit p2p profit analytics](https://jahamars.github.io/p2pcall)
-- [Zola Prism theme](https://xpltt.vercel.app/)
+- [zola Prism theme](https://xpltt.vercel.app/)
+- [browser startpage](https://jahamars.github.io/startpage/)
 
