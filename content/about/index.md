@@ -29,7 +29,8 @@ title = "Обо мне"
 - [Monkeytype](https://monkeytype.com/profile/gruvboxx)
 
 apps:
-- [bybit p2p profit analytics](https://jahamars.github.io/p2pcall)
+- [сайт для аналитики P&L в P2P на Bybit](https://jahamars.github.io/p2pcall)
 - [zola Prism theme](https://xpltt.vercel.app/)
-- [browser startpage](https://jahamars.github.io/startpage/)
+- [сайт для ТОУНКО "Vatan"](https://jahamars.github.io/startpage/)
+- [minimal browser startpage](https://jahamars.github.io/startpage/)
 
