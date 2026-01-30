@@ -31,6 +31,6 @@ title = "Обо мне"
 apps:
 - [сайт для аналитики P&L в P2P на Bybit](https://jahamars.github.io/p2pcall)
 - [zola Prism theme](https://xpltt.vercel.app/)
-- [сайт для ТОУНКО "Vatan"](https://jahamars.github.io/startpage/)
+- [сайт для ТОУНКО "Vatan"](https://jahamars.github.io/tounko1/)
 - [minimal browser startpage](https://jahamars.github.io/startpage/)
 
