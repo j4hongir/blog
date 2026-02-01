@@ -54,10 +54,10 @@ sam_menu = [
     { text = "Заметки", link = "/blog" },
     { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
-    { text = "Ачивки", link = "/sert" },
+    { text = "Ачивки", link = "https://jahamars.github.io/sert/" },
     { text = "Авторы", link = "/authors" },
-    { text = "RSS", link = "/rss.xml" }
-    # { text = "Теги", link = "/tags" }
+    { text = "Теги", link = "/tags" }
+    # { text = "RSS", link = "/rss.xml" }
 ]
 
 sam_bottom_menu = true
