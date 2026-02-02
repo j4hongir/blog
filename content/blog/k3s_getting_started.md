@@ -2,6 +2,7 @@
 title = "K3s за 5 минут"
 date = 2025-12-27
 [taxonomies]
+categories = ["tech"]
 tags = ["k3s", "k8s", "guide"]
 authors = ["Jahongir Ahmadaliev"]
 +++

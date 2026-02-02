@@ -1,7 +1,8 @@
 +++
-title = "Решение задание 2 Первый отборочный этап(Современные сетевые технологии 2025)"
+title = "Решение задания 2 IT-Планета 2025: Сетевые технологии"
 date = 2025-04-07
 [taxonomies]
+categories = ["tech"]
 tags = ["ansible", "ssh", "debian"]
 authors = ["Jahongir Ahmadaliev"]
 +++
