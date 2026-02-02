@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /*.pdf$
-
-# Sitemap
-Sitemap: https://jahongir.ru/sert/sitemap.xml
