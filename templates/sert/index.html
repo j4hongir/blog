@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jahongir Ahmadaliev - Certificates & Achievements</title>
+  <meta name="description" content="Professional certificates, achievements, and resume of Jahongir Ahmadaliev - DevOps Engineer & Cybersecurity Specialist">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* === GLOBAL RESET === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* === CSS VARIABLES === */
+    :root {
+      --bg-color: #0a0a0f;
+      --surface-glass: rgba(255, 255, 255, 0.04);
+      --surface-glass-hover: rgba(255, 255, 255, 0.08);
+      --surface-border: rgba(255, 255, 255, 0.1);
+      --accent-teal: #4fc3f7;
+      --accent-blue: #5e92f3;
+      --accent-violet: #9d7fc9;
+      --text-main: #e8e8f0;
+      --text-muted: #9090a0;
+      --text-highlight: #ffffff;
+      --radius-lg: 20px;
+      --radius-pill: 50px;
+      --glass-blur: blur(16px);
+    }
+
+    /* === BODY === */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Orbitron', 'Science Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    /* === AURORA BACKGROUND === */
+    .aurora-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      animation: drift 20s infinite alternate ease-in-out;
+    }
+
+    .blob-1 {
+      top: -10%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      background: var(--accent-violet);
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      bottom: -10%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      background: var(--accent-teal);
+      animation-delay: -5s;
+    }
+
+    .blob-3 {
+      top: 40%;
+      left: 40%;
+      width: 40vw;
+      height: 40vw;
+      background: var(--accent-blue);
+      opacity: 0.15;
+      animation-delay: -10s;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 50px) scale(1.1); }
+    }
+
+    /* === CONTAINER === */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* === HEADER === */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--accent-teal), var(--accent-violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .top-links a {
+      padding: 0.5rem 1.2rem;
+      background: var(--surface-glass);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+    }
+
+    .top-links a:hover {
+      background: var(--surface-glass-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* === FILTERS === */
+    .filters {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter {
+      padding: 0.6rem 1.5rem;
+      background: var(--surface-glass);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      text-transform: capitalize;
+    }
+
+    .filter:hover {
+      background: var(--surface-glass-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .filter.active {
+      background: var(--surface-glass-hover);
+      border-color: rgba(79, 195, 247, 0.3);
+      color: var(--accent-teal);
+    }
+
+    /* === GRID === */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .item {
+      background: var(--surface-glass);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      text-align: center;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-main);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(79, 195, 247, 0.03), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .item:hover::before {
+      opacity: 1;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--surface-border);
+    }
+
+    footer a {
+      color: var(--accent-teal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--text-highlight);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .aurora-container .blob {
+        opacity: 0.2;
+        filter: blur(60px);
+      }
+
+      .blob-1 {
+        width: 80vw;
+        height: 80vw;
+        left: -30%;
+      }
+
+      .blob-2 {
+        width: 90vw;
+        height: 90vw;
+        right: -30%;
+      }
+
+      .blob-3 {
+        width: 70vw;
+        height: 70vw;
+        opacity: 0.1;
+      }
+
+      .container {
+        padding: 1.5rem 1rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+      }
+
+      .top-links {
+        justify-content: center;
+      }
+
+      .top-links a {
+        font-size: 0.75rem;
+        padding: 0.45rem 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+      }
+
+      .filters {
+        gap: 0.5rem;
+      }
+
+      .filter {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .item {
+        padding: 1.5rem 1.25rem;
+        font-size: 0.85rem;
+        border-radius: 12px;
+      }
+
+      footer {
+        margin-top: 3rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 375px) {
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .item {
+        padding: 1.25rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Aurora Background -->
+  <div class="aurora-container">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <!-- <div class="logo">Jahongir Ahmadaliev</div> -->
+      <nav class="top-links">
+        <a href="https://jahongir.ru">Home</a>
+        <a href="https://t.me/gruvboxx">Telegram</a>
+        <a href="https://github.com/jahamars/sert">GitHub</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Certificates & Achievements</h1>
+      <p class="subtitle">Jahongir Ahmadaliev</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter active" data-cat="all">All</button>
+      <button class="filter" data-cat="course-certificates">Courses</button>
+      <button class="filter" data-cat="participation-certificates">Events</button>
+      <button class="filter" data-cat="trainings">Trainings</button>
+      <button class="filter" data-cat="victories">Victories</button>
+      <button class="filter" data-cat="resume">Resume</button>
+      <button class="filter" data-cat="certificates_ctl">Language</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid" id="grid"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Jahongir Ahmadaliev · <a href="https://jahongir.ru">jahongir.ru</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const BASE_URL = 'https://github.com/Jahamars/sert/blob/main/';
+
+    const data = {
+      'course-certificates': [
+        'astra-linux-admin.pdf',
+        'astra-linux-advanced-admin.pdf',
+        'astra-linux-user.pdf',
+        'Certified-Cybersecurity-Professional-2025.pdf',
+        'braim-itadmin.pdf',
+        'braim-sql.pdf',
+        'cisco-cybersecurity-Es.pdf',
+        'eltex-network-1.pdf',
+        'lewagon-docker.pdf',
+        'netology-cybersec0.pdf',
+        'netology-db0.pdf',
+        'otus-git-basics.pdf',
+        'sangoma-asterisk-certified-essentials.pdf',
+        'stepik-ansible.pdf',
+        'stepik-docker.pdf',
+        'TLF-Kuber.pdf',
+        'TLF-XSS.pdf',
+        'yandex-cloud-engineer.pdf'
+      ],
+      'participation-certificates': [
+        'alfa_hackathon_2025.pdf',
+        'Astra-linux-Administration—IT-Planet-2025.pdf',
+        'final-DevOps(Траектория-будущего-2024-2025).pdf',
+        'final-infosec(Кибепротект).pdf',
+        'final-infosec(Траектория-будущего-2025).pdf',
+        'Infosec-IT-Planet-2025.pdf',
+        'Network-IT-Planet-2025.pdf',
+        'participating-Astra.pdf',
+        'REDOS-Administration—IT-Planet-2025.pdf',
+        't1_2025.pdf'
+      ],
+      'trainings': [
+        'cybrary-cert-casp-security-architecture.pdf',
+        'cybrary-cert-cryptography.pdf',
+        'cybrary-cert-offensive-security-operations.pdf',
+        'cybrary-cert-sscp-domain-6-network-and-communications-security.pdf',
+        'cybrary-cert-the-cyber-kill-chain.pdf',
+        'cybrary-cert-web-application-hacking.pdf'
+      ],
+      'resume': ['en.pdf', 'ru.pdf'],
+      'certificates_ctl': ['EF SET Certificate.pdf'],
+      'victories': ['2nd-place-winner-DevOps.pdf']
+    };
+
+    const grid = document.getElementById('grid');
+    const filters = document.querySelectorAll('.filter');
+
+    // Flatten all data
+    let all = [];
+    Object.keys(data).forEach(cat => {
+      data[cat].forEach(file => all.push({ file, cat }));
+    });
+
+    // Format filename for display
+    function format(name) {
+      return name
+        .replace('.pdf', '')
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase())
+        .trim();
+    }
+
+    // Render items
+    function render(cat = 'all') {
+      const items = cat === 'all' ? all : all.filter(i => i.cat === cat);
+      grid.innerHTML = '';
+
+      if (items.length === 0) {
+        grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;">No items found</p>';
+        return;
+      }
+
+      items.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.textContent = format(item.file);
+        div.onclick = () => {
+          const url = BASE_URL + item.cat + '/' + encodeURIComponent(item.file);
+          window.open(url, '_blank');
+        };
+        grid.appendChild(div);
+      });
+    }
+
+    // Filter buttons
+    filters.forEach(btn => {
+      btn.onclick = () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.cat);
+      };
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

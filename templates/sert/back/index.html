@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jahongir Ahmadaliev - Achievements</title>
+    
+    <meta name="description" content="Portfolio of achievements, certificates, and qualifications of Jahongir Ahmadaliev. Expertise in DevOps, InfoSec, and system administration.">
+    <meta name="author" content="Jahongir Ahmadaliev">
+    
+    <link rel="icon" href="https://raw.githubusercontent.com/Jahamars/sert/refs/heads/main/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Gruvbox Hard Dark Palette */
+            --bg: #1d2021;
+            --bg1: #282828;
+            --fg: #fbf1c7;
+            --red: #fb4934;
+            --green: #b8bb26;
+            --yellow: #fabd2f;
+            --blue: #83a598;
+            --purple: #d3869b;
+            --aqua: #8ec07c;
+            --gray: #928374;
+        }
+
+        /* General Reset & Body */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            background-color: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-bottom: 2px solid var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            color: var(--yellow);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            color: var(--aqua);
+            font-size: 1rem;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-btn {
+            background-color: var(--bg1);
+            color: var(--blue);
+            border: 1px solid var(--gray);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--gray);
+            color: var(--bg);
+            border-color: var(--blue);
+        }
+
+        /* Category Filters */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg);
+            padding: 1rem 0.5rem;
+            z-index: 10;
+            border-bottom: 1px solid var(--bg1);
+        }
+
+        .category-btn {
+            background-color: transparent;
+            color: var(--gray);
+            border: 1px solid var(--gray);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+        }
+
+        .category-btn:hover {
+            color: var(--fg);
+            border-color: var(--fg);
+        }
+
+        .category-btn.active {
+            background-color: var(--blue);
+            color: var(--bg);
+            border-color: var(--blue);
+            font-weight: bold;
+        }
+
+        /* Certificates Grid */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certificate-card {
+            background-color: var(--bg1);
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .certificate-preview {
+            font-size: 2.5rem;
+            color: var(--aqua);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-details {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .certificate-details h3 {
+            font-size: 1rem;
+            color: var(--fg);
+            line-height: 1.4;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .certificate-meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+        }
+
+        .view-btn {
+            display: inline-block;
+            background-color: var(--blue);
+            color: var(--bg);
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .view-btn:hover {
+            background-color: var(--aqua);
+        }
+        
+        /* Modal for PDF Viewer */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(29, 32, 33, 0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background-color: var(--bg1);
+            margin: 2% auto;
+            width: 95%;
+            max-width: 900px;
+            height: 95%;
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        #pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px; top: 5px;
+            color: var(--gray);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.2s ease;
+        }
+
+        .close:hover {
+            color: var(--red);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-top: 2px solid var(--gray);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Animations & Scrollbar */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg1); }
+        ::-webkit-scrollbar-thumb { background: var(--gray); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--blue); }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            header h1 { font-size: 1.6rem; }
+            .certificates-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .modal-content { width: 95%; height: 90%; }
+        }
+
+        @media (max-width: 480px) {
+            .certificates-grid { grid-template-columns: 1fr; }
+            .nav-buttons, .categories { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jahongir Ahmadaliev</h1>
+        <p>Achievements & Certifications</p>
+    </header>
+
+    <div class="container">
+        
+        <nav class="nav-buttons" aria-label="Primary Navigation">
+            <a href="https://jahamars.github.io/" class="nav-btn">
+                <i class="fas fa-address-card"></i> Web Resume
+            </a>
+            <a href="https://jmee.netlify.app" target="_blank" rel="noopener noreferrer" class="nav-btn">
+                <i class="fas fa-blog"></i> Blog
+            </a>
+        </nav>
+
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="course-certificates">Courses</button>
+            <button class="category-btn" data-category="participation-certificates">Participation</button>
+            <button class="category-btn" data-category="trainings">Training</button>
+            <button class="category-btn" data-category="victories">Victories</button>
+            <button class="category-btn" data-category="certificates-ctl">Confirmation</button>
+            <button class="category-btn" data-category="resume">Resume</button>
+        </div>
+
+        <div class="certificates-grid" id="certificates-container">
+            <!-- Certificate cards will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <div id="certificateModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <span class="close" role="button" aria-label="Close" tabindex="0">&times;</span>
+            <iframe id="pdf-viewer" title="Certificate Viewer"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>© <span id="current-year"></span> | Jahongir Ahmadaliev</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const certificatesData = {
+            "course-certificates": [
+                { name: "Astra Linux Advanced Administration", path: "course-certificates/astra-linux-advanced-admin.pdf" },
+                { name: "Astra Linux Administration", path: "course-certificates/astra-linux-admin.pdf" },
+                { name: "Yandex Cloud Engineer", path: "course-certificates/yandex-cloud-engineer.pdf" },
+                { name: "Cisco Cybersecurity Essentials", path: "course-certificates/cisco-cybersecurity-Es.pdf" },
+                { name: "Eltex Network Fundamentals", path: "course-certificates/eltex-network-1.pdf" },
+                { name: "Astra Linux User", path: "course-certificates/astra-linux-user.pdf" },
+                { name: "Otus Git Basics", path: "course-certificates/otus-git-basics.pdf" },
+                { name: "Braim IT Administrator", path: "course-certificates/braim-itadmin.pdf" },
+                { name: "Braim SQL", path: "course-certificates/braim-sql.pdf" },
+                { name: "Stepik Docker", path: "course-certificates/stepik-docker.pdf" },
+                { name: "Stepik Ansible", path: "course-certificates/stepik-ansible.pdf" },
+                { name: "Le Wagon Docker", path: "course-certificates/lewagon-docker.pdf" },
+                { name: "Netology Cybersecurity", path: "course-certificates/netology-cybersec0.pdf" },
+                { name: "Netology Database", path: "course-certificates/netology-db0.pdf" },
+                { name: "Sangoma Asterisk Certified Essentials", path: "course-certificates/sangoma-asterisk-certified-essentials.pdf" },
+                { name: "TLF Kubernetes", path: "course-certificates/TLF-Kuber.pdf" },
+                { name: "TLF XSS", path: "course-certificates/TLF-XSS.pdf" }
+            ],
+            "participation-certificates": [
+                { name: "2nd Place Winner - DevOps", path: "participation-certificates/2nd-place-winner-DevOps.pdf" },
+                { name: "Astra Linux Admin — IT Planet 2025", path: "participation-certificates/Astra-linux-Administration—IT-Planet-2025.pdf" },
+                { name: "DevOps Finalist (Future Trajectory 2024-2025)", path: "participation-certificates/final-DevOps(Траектория-будущего-2024-2025).pdf" },
+                { name: "InfoSec Participant — IT Planet 2025", path: "participation-certificates/Infosec-IT-Planet-2025.pdf" },
+                { name: "Network Participant — IT Planet 2025", path: "participation-certificates/Network-IT-Planet-2025.pdf" },
+                { name: "Astra Linux Challenge Participant", path: "participation-certificates/participating-Astra.pdf" },
+                { name: "RedOS Admin — IT Planet 2025", path: "participation-certificates/REDOS-Administration—IT-Planet-2025.pdf" },
+                { name: "InfoSec Finalist (Future Trajectory 2025)", path: "participation-certificates/final-infosec(Траектория-будущего-2025).pdf" },
+                { name: "InfoSec Finalist (Cyberprotect)", path: "participation-certificates/final-infosec(Кибепротект).pdf" }
+            ],
+            "trainings": [
+                { name: "Cybrary: CASP Security Architecture", path: "trainings/cybrary-cert-casp-security-architecture.pdf" },
+                { name: "Cybrary: Cryptography", path: "trainings/cybrary-cert-cryptography.pdf" },
+                { name: "Cybrary: The Cyber Kill Chain", path: "trainings/cybrary-cert-the-cyber-kill-chain.pdf" },
+                { name: "Cybrary: Offensive Security Operations", path: "trainings/cybrary-cert-offensive-security-operations.pdf" },
+                { name: "Cybrary: Network Communication Security", path: "trainings/cybrary-cert-sscp-domain-6-network-and-communications-security.pdf" },
+                { name: "Cybrary: Web Application Hacking", path: "trainings/cybrary-cert-web-application-hacking.pdf" }
+            ],
+            "resume": [
+                { name: "Resume (English)", path: "resume/en.pdf" },
+                { name: "Resume (Facultetus)", path: "resume/facultetus.pdf" }
+            ],
+            "certificates-ctl": [
+                { name: "EF SET English Certificate", path: "Certificates ctl/EF SET Certificate.pdf" }
+            ],
+            "victories": [
+                { name: "2nd Place Winner - DevOps Competition", path: "victories/2nd-place-winner-DevOps.pdf" }
+            ]
+        }; 
+
+        const certificatesContainer = document.getElementById('certificates-container');
+        const modal = document.getElementById('certificateModal');
+        const pdfViewer = document.getElementById('pdf-viewer');
+        const closeBtn = document.querySelector('.close');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+
+        const categoryDisplayNames = {
+            'course-certificates': 'Course',
+            'participation-certificates': 'Participation',
+            'trainings': 'Training',
+            'resume': 'Resume',
+            'victories': 'Victory',
+            'certificates-ctl': 'Confirmation'
+        };
+
+        function createCertificateCard(cert, category) {
+            const card = document.createElement('div');
+            card.className = `certificate-card data-category-${category}`;
+            card.innerHTML = `
+                <div class="certificate-preview">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="certificate-details">
+                    <h3>${cert.name}</h3>
+                    <p class="certificate-meta">${categoryDisplayNames[category] || 'General'}</p>
+                    <a href="#" class="view-btn" data-path="${cert.path}">View Certificate</a>
+                </div>
+            `;
+            
+            card.querySelector('.view-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                openCertificate(this.dataset.path);
+            });
+            
+            return card;
+        }
+
+        // --- ИЗМЕНЕННАЯ ФУНКЦИЯ ДЛЯ ПРОСМОТРА ---
+        function openCertificate(path) {
+            // Базовый URL вашего репозитория с "сырыми" файлами на GitHub
+            const repoUrl = 'https://raw.githubusercontent.com/Jahamars/sert/main/';
+            const fullPdfPath = repoUrl + path;
+
+            // Формируем URL для просмотрщика Google. Он надежно работает на всех устройствах.
+            // Параметр embedded=true убирает лишние элементы интерфейса Google.
+            const viewerUrl = `https://docs.google.com/gview?url=${encodeURIComponent(fullPdfPath)}&embedded=true`;
+            
+            pdfViewer.src = viewerUrl;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+        }
+
+        function loadCertificates(category = 'all') {
+            certificatesContainer.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+            
+            const categoriesToLoad = category === 'all' 
+                ? Object.keys(certificatesData) 
+                : [category];
+
+            categoriesToLoad.forEach(cat => {
+                if (certificatesData[cat]) {
+                    certificatesData[cat].forEach(cert => {
+                        fragment.appendChild(createCertificateCard(cert, cat));
+                    });
+                }
+            });
+            
+            certificatesContainer.appendChild(fragment);
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            pdfViewer.src = 'about:blank'; // Очищаем iframe, чтобы остановить загрузку
+            document.body.style.overflow = ''; // Возвращаем прокрутку фона
+        }
+
+        // Event Listeners
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') closeModal();
+        });
+
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                loadCertificates(this.dataset.category);
+            });
+        });
+        
+        // Initial Load
+        loadCertificates('all');
+
+    </script>
+</body>
+</html>

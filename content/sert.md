@@ -1,4 +1,4 @@
 +++
 title = "Redirect"
-template = "redirect.html"
+template = "sert/index.html"
 +++
