@@ -1,5 +1,10 @@
 +++
 title = "Обо мне"
+
+
+[extra]
+no_header = true
+toc = false
 +++
 
 <div align="center">

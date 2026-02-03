@@ -1,20 +1,16 @@
-# The URL the site will be built for
 base_url = "https://jahongir.ru"
 
-# Build settings
 compile_sass = true
-minify_html = true  # Включено для производительности
+minify_html = true  
 generate_robots_txt = true
 generate_feeds = true
-feed_filenames = ["rss.xml", "atom.xml"]  # RSS и Atom feeds
+feed_filenames = ["rss.xml", "atom.xml"]  
 
-# Site info
 title = "DevSecOps notes"
 description = "блог про технологии и не только"
 default_language = "ru"
 theme = "prism"
 
-# Search
 build_search_index = true
 
 # Taxonomies
@@ -36,21 +32,18 @@ theme = "nord"
 enabled = true
 
 [extra]
-# SEO
 keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Ansible, Terraform, Jahongir Ahmadaliev, Жахонгир Ахмадалиев"
 author = "Jahongir Ahmadaliev"
 banner = "favicon/android-chrome-512x512.png"
+show_toc = true
 
-# Date format
 date_format = "%d.%m.%Y"
 
-# Features
 comments = true
 home = "Back"
 show_word_count = true
 show_reading_time = true
 
-# Navigation menu
 sam_menu = [
     { text = "Заметки", link = "/blog" },
     { text = "Обо мне", link = "/about" },
