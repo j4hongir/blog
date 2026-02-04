@@ -16,9 +16,9 @@ toc = false
  
 Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства, присылай [pull request](https://github.com/jahamars/blog) )
 
-Более подробно — в моем  [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
+Более подробно про меня в моем [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
 
-Доп ссылки: 
+Доп ссылки:
 - [Ачивки](https://jahongir.ru/sert)  
 - [Email](mailto:jahamarsi@gmail.com)  
 - [Telegram](https://t.me/xpltt)
