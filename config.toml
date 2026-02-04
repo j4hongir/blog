@@ -56,3 +56,37 @@ sam_menu = [
 ]
 
 sam_bottom_menu = true
+
+[extra.giscus]
+enabled = true
+repo = "jahamars/blog"
+repo_id = "R_kgDOOGPcjw"
+category = "Announcements"
+category_id = "DIC_kwDOOGPcj84C0ShM"
+mapping = "pathname"
+strict = "0"
+reactions_enabled = "1"
+emit_metadata = "0"
+input_position = "bottom"
+theme = "dark"
+lang = "ru"
+
+# Google Analytics
+[extra.analytics]
+google_analytics_id = "G-ELR5QJ5CKK"
+
+# Footer
+# [extra.sam_footer]
+# text = "Built using Zola & Prism theme"
+
+# Author (optional)
+# [extra.author]
+# name = "Jahongir Ahmadaliev"
+# email = ""
+# url = "https://jahongir.ru"
+
+# Features
+[extra.features]
+copy_code_button = true
+reading_progress_bar = true
+smooth_scroll = true
