@@ -16,7 +16,6 @@ toc = false
  
 Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства, присылай [pull request](https://github.com/jahamars/blog) )
 
-Интересуюсь позициями DevOps, Cloud Engineer, SRE и системного администратора.
 Более подробно — в моем  [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
 
 Доп ссылки: 
