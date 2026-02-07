@@ -8,8 +8,9 @@ toc = false
 +++
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/ava.png" alt="Jahongir Ahmadaliev" style="border-radius: 5%; width: 40%;"/>
+  <img src="https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/ava.png" alt="Jahongir Ahmadaliev" style="border-radius: 7%; width: 25%;"/>
 </div>
+
 
 ## я Жахонгир 
 Занимаюсь безопасностью и надежностью инфраструктуры. 
