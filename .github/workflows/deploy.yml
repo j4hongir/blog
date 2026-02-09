@@ -20,16 +20,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive  
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Install Zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.22.1  
+      
       - name: Build with Zola
-        uses: shalzz/zola-deploy-action@v0.18.0
-        env:
-          PAGES_BRANCH: gh-pages
-          BUILD_DIR: .
-          BUILD_ONLY: true
+        run: zola build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
