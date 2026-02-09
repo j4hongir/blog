@@ -27,9 +27,8 @@ external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = true
 
-# [markdown.highlighting]
-# theme = "nord"
-# enabled = true
+
+highlighting = { theme = "github-dark" }
 
 [extra]
 keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Ansible, Terraform, Jahongir Ahmadaliev, Жахонгир Ахмадалиев"
