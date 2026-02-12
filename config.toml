@@ -35,6 +35,8 @@ author = "Jahongir Ahmadaliev"
 banner = "favicon/android-chrome-512x512.png"
 show_toc = true
 
+
+background_image = "https://i.ibb.co/LhtbGGMV/starry-sky.png"
 date_format = "%d.%m.%Y"
 
 comments = true
