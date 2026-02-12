@@ -2,7 +2,7 @@
 title = "Решение задания 2 IT-Планета 2025: Информационная безопасность"
 date = 2025-04-07
 [taxonomies]
-categories = ["tech", "other"]
+categories = ["tech"]
 tags = ["infosec", "openvpn", "redos"]
 authors = ["Jahongir Ahmadaliev"]
 +++

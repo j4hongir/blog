@@ -19,16 +19,23 @@
 
     /* === CSS VARIABLES === */
     :root {
-      --bg-color: #0a0a0f;
-      --surface-glass: rgba(255, 255, 255, 0.04);
-      --surface-glass-hover: rgba(255, 255, 255, 0.08);
-      --surface-border: rgba(255, 255, 255, 0.1);
-      --accent-teal: #4fc3f7;
-      --accent-blue: #5e92f3;
-      --accent-violet: #9d7fc9;
-      --text-main: #e8e8f0;
-      --text-muted: #9090a0;
-      --text-highlight: #ffffff;
+      /* Base grayscale palette */
+      --bg-color: #2C2C2C;
+      --surface-glass: #3D3D3D;
+      --surface-glass-hover: #4C4C4C;
+      --surface-border: rgba(255, 255, 255, 0.08);
+
+      /* Accents repurposed to grayscale */
+      --accent-teal: #4C4C4C;
+      --accent-blue: #3D3D3D;
+      --accent-violet: #2C2C2C;
+
+      /* Typography */
+      --text-main: #F3F3F3;
+      --text-muted: #B0B0B0;
+      --text-highlight: #FFFFFF;
+
+      /* Shape tokens */
       --radius-lg: 20px;
       --radius-pill: 50px;
       --glass-blur: blur(16px);
@@ -211,8 +218,8 @@
 
     .filter.active {
       background: var(--surface-glass-hover);
-      border-color: rgba(79, 195, 247, 0.3);
-      color: var(--accent-teal);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--text-highlight);
     }
 
     /* === GRID === */
@@ -247,7 +254,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(79, 195, 247, 0.03), transparent);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -416,7 +423,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 Jahongir Ahmadaliev · <a href="https://jahongir.ru">jahongir.ru</a></p>
+      <p>© 2026 Jahongir Ahmadaliev · <a href="https://jahongir.ru">jahongir.ru</a></p>
     </footer>
   </div>
 
