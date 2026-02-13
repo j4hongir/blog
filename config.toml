@@ -36,9 +36,7 @@ banner = "favicon/android-chrome-512x512.png"
 show_toc = true
 
 
-background_image = "https://raw.githubusercontent.com/Jahamars/zola-prism/refs/heads/main/static/bg3.jpg"
-# background_image = "https://raw.githubusercontent.com/Jahamars/zola-prism/refs/heads/main/static/bg2.png"
-# background_gradient = "#2C2C2C"
+background_gradient = "#282828"
 
 date_format = "%d.%m.%Y"
 
