@@ -37,7 +37,7 @@ show_toc = true
 
 
 # background_gradient = "#282828"
-background_image = "https://raw.githubusercontent.com/Jahamars/zola-prism/refs/heads/main/static/bg3.jpg"
+background_image = "https://raw.githubusercontent.com/Jahamars/zola-prism/refs/heads/main/static/bg2.png"
 
 date_format = "%d.%m.%Y"
 
