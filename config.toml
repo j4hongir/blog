@@ -90,5 +90,5 @@ google_analytics_id = "G-ELR5QJ5CKK"
 # Features
 [extra.features]
 copy_code_button = true
-reading_progress_bar = true
+reading_progress_bar = false
 smooth_scroll = true
