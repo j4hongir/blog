@@ -1,563 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jahongir Ahmadaliev - Certificates & Achievements</title>
-  <meta name="description" content="Professional certificates, achievements, and resume of Jahongir Ahmadaliev - DevOps Engineer & Cybersecurity Specialist">
-  <link rel="icon" href="favicon.ico">
+  <title>Certificates — Jahongir Ahmadaliev</title>
+  <meta name="description" content="Certificates, achievements and resume of Jahongir Ahmadaliev">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* === GLOBAL RESET === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#282828;
+      --glass:rgba(255,255,255,0.04);
+      --glass-h:rgba(255,255,255,0.08);
+      --b:rgba(255,255,255,0.08);
+      --bh:rgba(255,255,255,0.15);
+      --text:#F3F3F3;
+      --muted:#909090;
+      --r:20px;
+      --pill:50px;
     }
+    html,body{overflow-x:hidden;max-width:100vw}
+    body{background:var(--bg);color:var(--text);font-family:'Orbitron',-apple-system,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}
 
-    /* === CSS VARIABLES === */
-    :root {
-      /* Простая серая палитра */
-      --bg-color: #282828;
-      --surface-glass: rgba(255, 255, 255, 0.04);
-      --surface-glass-hover: rgba(255, 255, 255, 0.08);
-      --surface-border: rgba(255, 255, 255, 0.08);
+    .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12;background:#3a3a3a;animation:drift 20s infinite alternate ease-in-out}
+    .b1{top:-10%;left:-10%;width:50vw;height:50vw}
+    .b2{bottom:-10%;right:-10%;width:60vw;height:60vw;animation-delay:-7s}
+    .b3{top:40%;left:40%;width:40vw;height:40vw;opacity:0.07;animation-delay:-14s}
+    @keyframes drift{to{transform:translate(30px,50px) scale(1.1)}}
 
-      /* Typography */
-      --text-main: #F3F3F3;
-      --text-muted: #B0B0B0;
-      --text-highlight: #FFFFFF;
+    .wrap{max-width:900px;margin:0 auto;padding:2.5rem 2rem;position:relative;z-index:1}
 
-      /* Shape tokens */
-      --radius-lg: 20px;
-      --radius-pill: 50px;
-      --glass-blur: blur(16px);
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;gap:1rem}
+    .logo{font-size:1.3rem;font-weight:700}
+    nav{display:flex;gap:0.75rem;flex-wrap:wrap}
+    nav a{padding:0.55rem 1.3rem;background:var(--glass);border:1px solid var(--b);border-radius:var(--pill);color:var(--muted);text-decoration:none;font-size:0.8rem;font-weight:600;transition:all 0.25s;white-space:nowrap;backdrop-filter:blur(16px)}
+    nav a:hover{background:var(--glass-h);border-color:var(--bh);color:var(--text);transform:translateY(-2px)}
+
+    .hero{margin-bottom:3rem}
+    h1{font-size:2.75rem;font-weight:800;line-height:1.1;margin-bottom:0.5rem}
+    .sub{color:var(--muted);font-size:0.9rem}
+
+    /* Filters */
+    .filters{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap}
+    .filter{padding:0.45rem 1.1rem;background:var(--glass);border:1px solid var(--b);border-radius:var(--pill);color:var(--muted);font-family:'Orbitron',sans-serif;font-size:0.72rem;font-weight:600;cursor:pointer;transition:all 0.25s;backdrop-filter:blur(16px);text-transform:uppercase;letter-spacing:0.04em}
+    .filter:hover{background:var(--glass-h);border-color:var(--bh);color:var(--text);transform:translateY(-2px)}
+    .filter.active{background:var(--glass-h);border-color:rgba(255,255,255,0.3);color:var(--text)}
+
+    /* List */
+    .certs{display:flex;flex-direction:column;border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
+
+    .cert{display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.75rem;background:var(--glass);cursor:pointer;transition:background 0.25s;border-bottom:1px solid var(--b)}
+    .cert:last-child{border-bottom:none}
+    .cert:hover{background:var(--glass-h)}
+    .cert:hover .arrow{transform:translateX(4px);opacity:1}
+
+    .cert-cat{font-size:0.65rem;color:var(--muted);white-space:nowrap;min-width:72px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase}
+    .cert-name{flex:1;font-size:0.9rem;font-weight:700;line-height:1.3}
+    .arrow{color:var(--muted);font-size:1rem;opacity:0.4;transition:all 0.25s;flex-shrink:0}
+
+    .state{padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem;font-family:-apple-system,sans-serif}
+    .loader-wrap{display:flex;align-items:center;justify-content:center;gap:0.75rem}
+    .spin{width:16px;height:16px;border:2px solid rgba(255,255,255,0.1);border-top-color:rgba(255,255,255,0.5);border-radius:50%;animation:spin 0.7s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--b);text-align:center;color:var(--muted);font-size:0.8rem}
+    footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--b)}
+    footer a:hover{color:var(--text)}
+
+    @media(max-width:640px){
+      .wrap{padding:1.5rem 1rem}
+      header{flex-direction:column;align-items:flex-start;margin-bottom:2.5rem}
+      nav{gap:0.5rem}
+      nav a{font-size:0.75rem;padding:0.45rem 1rem}
+      h1{font-size:1.75rem}
+      .cert{flex-direction:column;align-items:flex-start;gap:0.4rem;padding:1rem}
+      .cert-cat{min-width:auto}
+      .arrow{display:none}
     }
-
-    /* === BODY === */
-    html, body {
-      overflow-x: hidden;
-      max-width: 100vw;
-    }
-
-    body {
-      background: var(--bg-color);
-      color: var(--text-main);
-      font-family: 'Orbitron', 'Science Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
-      width: 100%;
-      position: relative;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* === AURORA BACKGROUND === */
-    .aurora-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.15;
-      animation: drift 20s infinite alternate ease-in-out;
-      will-change: transform;
-      background: #3a3a3a;
-    }
-
-    .blob-1 {
-      top: -10%;
-      left: -10%;
-      width: 50vw;
-      height: 50vw;
-      animation-delay: 0s;
-    }
-
-    .blob-2 {
-      bottom: -10%;
-      right: -10%;
-      width: 60vw;
-      height: 60vw;
-      animation-delay: -5s;
-    }
-
-    .blob-3 {
-      top: 40%;
-      left: 40%;
-      width: 40vw;
-      height: 40vw;
-      opacity: 0.1;
-      animation-delay: -10s;
-    }
-
-    @keyframes drift {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(30px, 50px) scale(1.1); }
-    }
-
-    /* === CONTAINER === */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* === HEADER === */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3rem;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .top-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .top-links a {
-      padding: 0.6rem 1.5rem;
-      background: var(--surface-glass);
-      border: 1px solid var(--surface-border);
-      border-radius: var(--radius-pill);
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      white-space: nowrap;
-    }
-
-    .top-links a:hover {
-      background: var(--surface-glass-hover);
-      border-color: rgba(255, 255, 255, 0.15);
-      color: var(--text-main);
-      transform: translateY(-2px);
-    }
-
-    /* === HERO === */
-    .hero {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      color: var(--text-main);
-    }
-
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    /* === FILTERS === */
-    .filters {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .filter {
-      padding: 0.6rem 1.5rem;
-      background: var(--surface-glass);
-      border: 1px solid var(--surface-border);
-      border-radius: var(--radius-pill);
-      color: var(--text-muted);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      text-transform: capitalize;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .filter:hover {
-      background: var(--surface-glass-hover);
-      border-color: rgba(255, 255, 255, 0.15);
-      color: var(--text-main);
-      transform: translateY(-2px);
-    }
-
-    .filter.active {
-      background: var(--surface-glass-hover);
-      border-color: rgba(255, 255, 255, 0.3);
-      color: var(--text-highlight);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    /* === GRID === */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .item {
-      background: var(--surface-glass);
-      border: 1px solid var(--surface-border);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      text-align: center;
-      min-height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text-main);
-      position: relative;
-      overflow: hidden;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .item:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      background: var(--surface-glass-hover);
-    }
-
-    .item:hover::before {
-      opacity: 1;
-    }
-
-    .item:active {
-      transform: translateY(-2px);
-    }
-
-    /* === FOOTER === */
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 2rem 0;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--surface-border);
-    }
-
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    footer a:hover {
-      color: var(--text-highlight);
-      border-bottom-color: var(--text-highlight);
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 768px) {
-      /* Уменьшаем анимации на мобильных */
-      .aurora-container .blob {
-        opacity: 0.1;
-        filter: blur(60px);
-        animation: none;
-      }
-
-      .blob-1 {
-        width: 80vw;
-        height: 80vw;
-        left: -30%;
-      }
-
-      .blob-2 {
-        width: 90vw;
-        height: 90vw;
-        right: -30%;
-      }
-
-      .blob-3 {
-        width: 70vw;
-        height: 70vw;
-        opacity: 0.05;
-      }
-
-      .container {
-        padding: 1.5rem 1rem;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-      }
-
-      .logo {
-        font-size: 1.25rem;
-        text-align: center;
-      }
-
-      .top-links {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .top-links a {
-        font-size: 0.8rem;
-        padding: 0.5rem 1.2rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .subtitle {
-        font-size: 0.9rem;
-      }
-
-      .filters {
-        gap: 0.5rem;
-      }
-
-      .filter {
-        font-size: 0.75rem;
-        padding: 0.5rem 1rem;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .item {
-        padding: 1.5rem 1.25rem;
-        font-size: 0.85rem;
-        border-radius: 16px;
-        min-height: 80px;
-      }
-
-      /* Убираем hover эффекты на мобильных */
-      .item:hover {
-        transform: none;
-      }
-
-      footer {
-        margin-top: 3rem;
-        font-size: 0.8rem;
-      }
-    }
-
-    @media (max-width: 375px) {
-      h1 {
-        font-size: 1.75rem;
-      }
-
-      .item {
-        padding: 1.25rem 1rem;
-        font-size: 0.8rem;
-      }
-
-      .top-links a {
-        font-size: 0.75rem;
-        padding: 0.45rem 1rem;
-      }
-    }
-
-    /* Prefers reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .blob {
-        animation: none;
-      }
+    @media(prefers-reduced-motion:reduce){
+      *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+      .blob{animation:none}
     }
   </style>
 </head>
 <body>
-  <!-- Aurora Background -->
-  <div class="aurora-container">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+
+<div class="aurora">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="logo">Jahongir Ahmadaliev</div>
+    <nav>
+      <a href="https://jahongir.ru">Home</a>
+      <a href="https://t.me/gruvboxx">Telegram</a>
+      <a href="https://github.com/jahamars">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Certificates</h1>
+    <p class="sub">Achievements, courses & resume</p>
   </div>
 
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <div class="logo">Jahongir Ahmadaliev</div>
-      <nav class="top-links">
-        <a href="https://jahongir.ru">Home</a>
-        <a href="https://t.me/gruvboxx">Telegram</a>
-        <a href="https://github.com/jahamars/sert">GitHub</a>
-      </nav>
-    </header>
-
-    <!-- Hero -->
-    <div class="hero">
-      <h1>Certificates & Achievements</h1>
-      <p class="subtitle">DevOps Engineer & Cybersecurity Specialist</p>
-    </div>
-
-    <!-- Filters -->
-    <div class="filters">
-      <button class="filter active" data-cat="all">All</button>
-      <button class="filter" data-cat="course-certificates">Courses</button>
-      <button class="filter" data-cat="participation-certificates">Events</button>
-      <button class="filter" data-cat="victories">Victories</button>
-      <button class="filter" data-cat="resume">Resume</button>
-      <button class="filter" data-cat="certificates_ctl">Language</button>
-    </div>
-
-    <!-- Grid -->
-    <div class="grid" id="grid"></div>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2026 Jahongir Ahmadaliev · <a href="https://jahongir.ru">jahongir.ru</a></p>
-    </footer>
+  <div class="filters" id="filters"></div>
+  <div class="certs" id="certs-list">
+    <div class="state"><div class="loader-wrap"><div class="spin"></div>Loading...</div></div>
   </div>
 
-  <script>
-    const BASE_URL = 'https://github.com/Jahamars/blog/tree/main/templates/sert/';
+  <footer>
+    <p>© 2026 Jahongir Ahmadaliev · <a href="https://jahongir.ru">jahongir.ru</a></p>
+  </footer>
+</div>
 
-    const data = {
-      'course-certificates': [
-        'astra-linux-admin.pdf',
-        'astra-linux-advanced-admin.pdf',
-        'astra-linux-user.pdf',
-        'Certified-Cybersecurity-Professional-2025.pdf',
-        'braim-itadmin.pdf',
-        'braim-sql.pdf',
-        'cisco-cybersecurity-Es.pdf',
-        'eltex-network-1.pdf',
-        'otus-git-basics.pdf',
-        'sangoma-asterisk-certified-essentials.pdf',
-        'stepik-ansible.pdf',
-        'stepik-docker.pdf',
-        'TLF-Kuber.pdf',
-        'yandex-cloud-engineer.pdf'
-      ],
-      'participation-certificates': [
-        'alfa_hackathon_2025.pdf',
-        'Astra-linux-Administration—IT-Planet-2025.pdf',
-        'final-DevOps(Траектория-будущего-2024-2025).pdf',
-        'final-infosec(Кибепротект).pdf',
-        'final-infosec(Траектория-будущего-2025).pdf',
-        'Infosec-IT-Planet-2025.pdf',
-        'Network-IT-Planet-2025.pdf',
-        'participating-Astra.pdf',
-        'REDOS-Administration—IT-Planet-2025.pdf',
-        't1_2025.pdf'
-      ],
-      'resume': ['en.pdf', 'ru.pdf'],
-      'certificates_ctl': ['EF SET Certificate.pdf'],
-      'victories': ['2nd-place-winner-DevOps.pdf']
+<script>
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+const OWNER  = 'Jahamars';
+const REPO   = 'blog';
+const BRANCH = 'main';
+const PREFIX = 'templates/sert';
+
+const SKIP = new Set(['index.html', '.github', '.git']);
+
+const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PREFIX}`;
+const RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${PREFIX}`;
+const GH  = `https://github.com/${OWNER}/${REPO}/tree/${BRANCH}/${PREFIX}`;
+
+// Human-readable category labels
+const CAT_LABELS = {
+  'course-certificates':       'Courses',
+  'participation-certificates':'Events',
+  'victories':                 'Victories',
+  'resume':                    'Resume',
+  'certificates_ctl':          'Language',
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
+const listEl    = document.getElementById('certs-list');
+const filtersEl = document.getElementById('filters');
+
+let allItems = [];
+let activeCat = 'all';
+
+function catLabel(cat) {
+  return CAT_LABELS[cat] || cat.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function formatName(filename) {
+  return filename
+    .replace(/\.pdf$/i, '')
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase())
+    .trim();
+}
+
+async function fetchJSON(url) {
+  const r = await fetch(url, { headers: { Accept: 'application/vnd.github.v3+json' } });
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+async function loadCerts() {
+  try {
+    const contents = await fetchJSON(API);
+    const dirs = contents.filter(f => f.type === 'dir' && !SKIP.has(f.name));
+
+    const groups = await Promise.all(dirs.map(async dir => {
+      try {
+        const files = await fetchJSON(`${API}/${dir.name}`);
+        return files
+          .filter(f => f.type === 'file' && f.name.toLowerCase().endsWith('.pdf'))
+          .map(f => ({ cat: dir.name, file: f.name }));
+      } catch {
+        return [];
+      }
+    }));
+
+    allItems = groups.flat();
+
+    renderFilters();
+    renderList();
+  } catch {
+    listEl.innerHTML = `<div class="state">Failed to load. <a href="${GH}" target="_blank" style="color:var(--muted);border-bottom:1px solid var(--b)">View on GitHub →</a></div>`;
+  }
+}
+
+function renderFilters() {
+  const cats = [...new Set(allItems.map(i => i.cat))];
+
+  const all = document.createElement('button');
+  all.className = 'filter active';
+  all.textContent = 'All';
+  all.dataset.cat = 'all';
+  filtersEl.appendChild(all);
+
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter';
+    btn.textContent = catLabel(cat);
+    btn.dataset.cat = cat;
+    filtersEl.appendChild(btn);
+  });
+
+  filtersEl.addEventListener('click', e => {
+    const btn = e.target.closest('.filter');
+    if (!btn) return;
+    filtersEl.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat;
+    renderList();
+  });
+}
+
+function renderList() {
+  const items = activeCat === 'all' ? allItems : allItems.filter(i => i.cat === activeCat);
+
+  if (!items.length) {
+    listEl.innerHTML = '<div class="state">Nothing here yet.</div>';
+    return;
+  }
+
+  listEl.innerHTML = '';
+  items.forEach(item => {
+    const el = document.createElement('div');
+    el.className = 'cert';
+    el.innerHTML = `
+      <div class="cert-cat">${catLabel(item.cat)}</div>
+      <div class="cert-name">${formatName(item.file)}</div>
+      <div class="arrow">→</div>
+    `;
+    el.onclick = () => {
+      window.open(`${RAW}/${item.cat}/${encodeURIComponent(item.file)}`, '_blank');
     };
+    listEl.appendChild(el);
+  });
+}
 
-    const grid = document.getElementById('grid');
-    const filters = document.querySelectorAll('.filter');
-
-    // Flatten all data
-    let all = [];
-    Object.keys(data).forEach(cat => {
-      data[cat].forEach(file => all.push({ file, cat }));
-    });
-
-    // Format filename for display
-    function format(name) {
-      return name
-        .replace('.pdf', '')
-        .replace(/[-_]/g, ' ')
-        .replace(/\b\w/g, c => c.toUpperCase())
-        .trim();
-    }
-
-    // Render items
-    function render(cat = 'all') {
-      const items = cat === 'all' ? all : all.filter(i => i.cat === cat);
-      grid.innerHTML = '';
-
-      if (items.length === 0) {
-        grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;">No items found</p>';
-        return;
-      }
-
-      items.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'item';
-        div.textContent = format(item.file);
-        div.onclick = () => {
-          const url = BASE_URL + item.cat + '/' + encodeURIComponent(item.file);
-          window.open(url, '_blank');
-        };
-        grid.appendChild(div);
-      });
-    }
-
-    // Filter buttons
-    filters.forEach(btn => {
-      btn.onclick = () => {
-        filters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        render(btn.dataset.cat);
-      };
-    });
-
-    // Initial render
-    render();
-
-    // Prevent double-tap zoom on iOS
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function (event) {
-      const now = Date.now();
-      if (now - lastTouchEnd <= 300) {
-        event.preventDefault();
-      }
-      lastTouchEnd = now;
-    }, false);
-  </script>
+loadCerts();
+</script>
 </body>
 </html>

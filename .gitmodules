@@ -1,3 +1,6 @@
 [submodule "themes/prism"]
 	path = themes/prism
 	url = https://github.com/Jahamars/zola-prism.git
+[submodule "templates/talks"]
+	path = templates/talks
+	url = https://github.com/Jahamars/tech-talks.git
