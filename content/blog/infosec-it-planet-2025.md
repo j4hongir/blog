@@ -264,7 +264,7 @@ verb 3
 дальше я написал простой скрипт на bash чтобы прописать в конфиг клиента ключи чтобы не ташить их отдельно 
 
 ```bash
-eecho '<ca>' >> /etc/openvpn/client/client.conf
+echo '<ca>' >> /etc/openvpn/client/client.conf
 cat /etc/openvpn/client/ca.crt >> /etc/openvpn/client/client.conf
 echo '</ca>' >> /etc/openvpn/client/client.conf
 
