@@ -1,4 +1,4 @@
 +++
 title = "Redirect"
-template = "takls/index.html"
+template = "talks/index.html"
 +++
