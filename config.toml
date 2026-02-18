@@ -48,13 +48,13 @@ show_reading_time = true
 
 sam_menu = [
     { text = "Заметки", link = "/blog" },
+    { text = "Авторы", link = "/authors" },
     { text = "Обо мне", link = "/about" },
     { text = "GitHub", link = "https://github.com/jahamars" },
     { text = "Ачивки", link = "/sert" },
-    { text = "Авторы", link = "/authors" },
-    { text = "Категории", link = "/categories" },
-    { text = "Теги", link = "/tags" },
     { text = "TECH talks", link = "/talks" }
+    # { text = "Категории", link = "/categories" },
+    # { text = "Теги", link = "/tags" },
     # { text = "RSS", link = "/rss.xml" }
 ]
 

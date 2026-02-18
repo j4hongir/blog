@@ -1,225 +1,321 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certificates — Jahongir Ahmadaliev</title>
-  <meta name="description" content="Certificates, achievements and resume of Jahongir Ahmadaliev">
+  <meta name="description" content="Certificates and achievements of Jahongir Ahmadaliev">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Science+Gothic&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --bg:#282828;
-      --glass:rgba(255,255,255,0.04);
-      --glass-h:rgba(255,255,255,0.08);
-      --b:rgba(255,255,255,0.08);
-      --bh:rgba(255,255,255,0.15);
-      --text:#F3F3F3;
-      --muted:#909090;
-      --r:20px;
-      --pill:50px;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #2C2C2C;
+      --surface:  #383838;
+      --border:   #444444;
+      --border-h: #606060;
+      --text:     #F0F0F0;
+      --muted:    #888888;
+      --r:        4px;
     }
-    html,body{overflow-x:hidden;max-width:100vw}
-    body{background:var(--bg);color:var(--text);font-family:'Orbitron',-apple-system,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}
 
-    .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12;background:#3a3a3a;animation:drift 20s infinite alternate ease-in-out}
-    .b1{top:-10%;left:-10%;width:50vw;height:50vw}
-    .b2{bottom:-10%;right:-10%;width:60vw;height:60vw;animation-delay:-7s}
-    .b3{top:40%;left:40%;width:40vw;height:40vw;opacity:0.07;animation-delay:-14s}
-    @keyframes drift{to{transform:translate(30px,50px) scale(1.1)}}
+    html, body { overflow-x: hidden; }
 
-    .wrap{max-width:900px;margin:0 auto;padding:2.5rem 2rem;position:relative;z-index:1}
-
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;gap:1rem}
-    .logo{font-size:1.3rem;font-weight:700}
-    nav{display:flex;gap:0.75rem;flex-wrap:wrap}
-    nav a{padding:0.55rem 1.3rem;background:var(--glass);border:1px solid var(--b);border-radius:var(--pill);color:var(--muted);text-decoration:none;font-size:0.8rem;font-weight:600;transition:all 0.25s;white-space:nowrap;backdrop-filter:blur(16px)}
-    nav a:hover{background:var(--glass-h);border-color:var(--bh);color:var(--text);transform:translateY(-2px)}
-
-    .hero{margin-bottom:3rem}
-    h1{font-size:2.75rem;font-weight:800;line-height:1.1;margin-bottom:0.5rem}
-    .sub{color:var(--muted);font-size:0.9rem}
-
-    /* Filters */
-    .filters{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap}
-    .filter{padding:0.45rem 1.1rem;background:var(--glass);border:1px solid var(--b);border-radius:var(--pill);color:var(--muted);font-family:'Orbitron',sans-serif;font-size:0.72rem;font-weight:600;cursor:pointer;transition:all 0.25s;backdrop-filter:blur(16px);text-transform:uppercase;letter-spacing:0.04em}
-    .filter:hover{background:var(--glass-h);border-color:var(--bh);color:var(--text);transform:translateY(-2px)}
-    .filter.active{background:var(--glass-h);border-color:rgba(255,255,255,0.3);color:var(--text)}
-
-    /* List */
-    .certs{display:flex;flex-direction:column;border:1px solid var(--b);border-radius:var(--r);overflow:hidden}
-
-    .cert{display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.75rem;background:var(--glass);cursor:pointer;transition:background 0.25s;border-bottom:1px solid var(--b)}
-    .cert:last-child{border-bottom:none}
-    .cert:hover{background:var(--glass-h)}
-    .cert:hover .arrow{transform:translateX(4px);opacity:1}
-
-    .cert-cat{font-size:0.65rem;color:var(--muted);white-space:nowrap;min-width:72px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase}
-    .cert-name{flex:1;font-size:0.9rem;font-weight:700;line-height:1.3}
-    .arrow{color:var(--muted);font-size:1rem;opacity:0.4;transition:all 0.25s;flex-shrink:0}
-
-    .state{padding:2rem;text-align:center;color:var(--muted);font-size:0.85rem;font-family:-apple-system,sans-serif}
-    .loader-wrap{display:flex;align-items:center;justify-content:center;gap:0.75rem}
-    .spin{width:16px;height:16px;border:2px solid rgba(255,255,255,0.1);border-top-color:rgba(255,255,255,0.5);border-radius:50%;animation:spin 0.7s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--b);text-align:center;color:var(--muted);font-size:0.8rem}
-    footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--b)}
-    footer a:hover{color:var(--text)}
-
-    @media(max-width:640px){
-      .wrap{padding:1.5rem 1rem}
-      header{flex-direction:column;align-items:flex-start;margin-bottom:2.5rem}
-      nav{gap:0.5rem}
-      nav a{font-size:0.75rem;padding:0.45rem 1rem}
-      h1{font-size:1.75rem}
-      .cert{flex-direction:column;align-items:flex-start;gap:0.4rem;padding:1rem}
-      .cert-cat{min-width:auto}
-      .arrow{display:none}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Science Gothic', 'Segoe UI', system-ui, sans-serif;
+      font-optical-sizing: auto;
+      font-variation-settings: "slnt" 0, "wdth" 100, "CTRS" 0;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
     }
-    @media(prefers-reduced-motion:reduce){
-      *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
-      .blob{animation:none}
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .hero { margin-bottom: 2.5rem; }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+      font-variation-settings: "slnt" 0, "wdth" 110, "CTRS" 0;
+    }
+
+    .sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .filters {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter {
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+      font-variation-settings: "slnt" 0, "wdth" 100, "CTRS" 0;
+    }
+
+    .filter:hover { color: var(--text); border-color: var(--border-h); }
+    .filter.on { color: var(--text); border-color: var(--border-h); background: var(--surface); }
+
+    .list {
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 84px 1fr 20px;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+
+    .item:last-child { border-bottom: none; }
+    .item:hover { background: var(--surface); }
+    .item:hover .arr { opacity: 1; transform: translateX(3px); }
+
+    .cat {
+      font-size: 0.63rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .name {
+      font-size: 0.87rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .arr {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: monospace;
+      opacity: 0;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .state {
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    .state a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); }
+    .state a:hover { color: var(--text); }
+
+    .spin {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid var(--border);
+      border-top-color: var(--muted);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    footer {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 580px) {
+      .page { padding: 2rem 1.25rem 4rem; }
+      header { margin-bottom: 3rem; }
+      h1 { font-size: 1.75rem; }
+      .item { grid-template-columns: 1fr; gap: 0.2rem; padding: 0.9rem 1rem; }
+      .arr { display: none; }
     }
   </style>
 </head>
 <body>
+<div class="page">
 
-<div class="aurora">
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
-  <div class="blob b3"></div>
-</div>
-
-<div class="wrap">
   <header>
-    <div class="logo">Jahongir Ahmadaliev</div>
+    <a class="logo" href="https://jahongir.ru">Jahongir Ahmadaliev</a>
     <nav>
       <a href="https://jahongir.ru">Home</a>
-      <a href="https://t.me/gruvboxx">Telegram</a>
-      <a href="https://github.com/jahamars">GitHub</a>
+      <a href="https://github.com/jahamars" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://t.me/gruvboxx" target="_blank" rel="noopener">Telegram</a>
     </nav>
   </header>
 
   <div class="hero">
     <h1>Certificates</h1>
-    <p class="sub">Achievements, courses & resume</p>
+    <p class="sub">Courses, achievements &amp; resume</p>
   </div>
 
   <div class="filters" id="filters"></div>
-  <div class="certs" id="certs-list">
-    <div class="state"><div class="loader-wrap"><div class="spin"></div>Loading...</div></div>
-  </div>
+  <div class="list" id="list"><div class="state"><span class="spin"></span>Loading...</div></div>
 
   <footer>
-    <p>© 2026 Jahongir Ahmadaliev · <a href="https://jahongir.ru">jahongir.ru</a></p>
+    <a href="https://jahongir.ru">jahongir.ru</a>
   </footer>
-</div>
 
+</div>
 <script>
-// ─── CONFIG ───────────────────────────────────────────────────────────────────
+// ── config ────────────────────────────────────────────────────────────
 const OWNER  = 'Jahamars';
 const REPO   = 'blog';
 const BRANCH = 'main';
-const PREFIX = 'templates/sert';
+const DIR    = 'templates/sert';
+const SKIP   = new Set(['index.html']);
 
-const SKIP = new Set(['index.html', '.github', '.git']);
+const API = path =>
+  `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`;
+const GH = path =>
+  `https://github.com/${OWNER}/${REPO}/blob/${BRANCH}/${path}`;
+// ─────────────────────────────────────────────────────────────────────
 
-const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PREFIX}`;
-const RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${PREFIX}`;
-const GH  = `https://github.com/${OWNER}/${REPO}/tree/${BRANCH}/${PREFIX}`;
-
-// Human-readable category labels
-const CAT_LABELS = {
-  'course-certificates':       'Courses',
-  'participation-certificates':'Events',
-  'victories':                 'Victories',
-  'resume':                    'Resume',
-  'certificates_ctl':          'Language',
-};
-// ─────────────────────────────────────────────────────────────────────────────
-
-const listEl    = document.getElementById('certs-list');
+const listEl    = document.getElementById('list');
 const filtersEl = document.getElementById('filters');
+let all    = [];
+let active = 'all';
 
-let allItems = [];
-let activeCat = 'all';
+const label = s => s.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+const title = s => s.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()).trim();
 
-function catLabel(cat) {
-  return CAT_LABELS[cat] || cat.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-
-function formatName(filename) {
-  return filename
-    .replace(/\.pdf$/i, '')
-    .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, c => c.toUpperCase())
-    .trim();
-}
-
-async function fetchJSON(url) {
-  const r = await fetch(url, { headers: { Accept: 'application/vnd.github.v3+json' } });
+async function get(path) {
+  const r = await fetch(API(path), { headers: { Accept: 'application/vnd.github.v3+json' } });
   if (!r.ok) throw new Error(r.status);
   return r.json();
 }
 
-async function loadCerts() {
+async function load() {
   try {
-    const contents = await fetchJSON(API);
-    const dirs = contents.filter(f => f.type === 'dir' && !SKIP.has(f.name));
+    const root = await get(DIR);
+    const dirs = root.filter(f => f.type === 'dir' && !SKIP.has(f.name));
 
-    const groups = await Promise.all(dirs.map(async dir => {
-      try {
-        const files = await fetchJSON(`${API}/${dir.name}`);
-        return files
-          .filter(f => f.type === 'file' && f.name.toLowerCase().endsWith('.pdf'))
-          .map(f => ({ cat: dir.name, file: f.name }));
-      } catch {
-        return [];
-      }
-    }));
+    all = (await Promise.all(
+      dirs.map(async d => {
+        try {
+          const files = await get(`${DIR}/${d.name}`);
+          return files
+            .filter(f => f.type === 'file' && f.name.toLowerCase().endsWith('.pdf'))
+            .map(f => ({ cat: d.name, file: f.name }));
+        } catch { return []; }
+      })
+    )).flat();
 
-    allItems = groups.flat();
-
-    renderFilters();
-    renderList();
+    buildFilters();
+    render();
   } catch {
-    listEl.innerHTML = `<div class="state">Failed to load. <a href="${GH}" target="_blank" style="color:var(--muted);border-bottom:1px solid var(--b)">View on GitHub →</a></div>`;
+    listEl.innerHTML = `<div class="state">
+      Could not load data.
+      <a href="https://github.com/${OWNER}/${REPO}/tree/${BRANCH}/${DIR}" target="_blank">View on GitHub</a>
+    </div>`;
   }
 }
 
-function renderFilters() {
-  const cats = [...new Set(allItems.map(i => i.cat))];
+function buildFilters() {
+  const cats = [...new Set(all.map(i => i.cat))];
+  filtersEl.innerHTML = '';
 
-  const all = document.createElement('button');
-  all.className = 'filter active';
-  all.textContent = 'All';
-  all.dataset.cat = 'all';
-  filtersEl.appendChild(all);
+  const make = (cat, text, on) => {
+    const b = document.createElement('button');
+    b.className = 'filter' + (on ? ' on' : '');
+    b.dataset.cat = cat;
+    b.textContent = text;
+    return b;
+  };
 
-  cats.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'filter';
-    btn.textContent = catLabel(cat);
-    btn.dataset.cat = cat;
-    filtersEl.appendChild(btn);
-  });
+  filtersEl.appendChild(make('all', 'All', true));
+  cats.forEach(c => filtersEl.appendChild(make(c, label(c), false)));
 
   filtersEl.addEventListener('click', e => {
-    const btn = e.target.closest('.filter');
-    if (!btn) return;
-    filtersEl.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCat = btn.dataset.cat;
-    renderList();
+    const b = e.target.closest('.filter');
+    if (!b) return;
+    filtersEl.querySelectorAll('.filter').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    active = b.dataset.cat;
+    render();
   });
 }
 
-function renderList() {
-  const items = activeCat === 'all' ? allItems : allItems.filter(i => i.cat === activeCat);
+function render() {
+  const items = active === 'all' ? all : all.filter(i => i.cat === active);
 
   if (!items.length) {
     listEl.innerHTML = '<div class="state">Nothing here yet.</div>';
@@ -227,22 +323,22 @@ function renderList() {
   }
 
   listEl.innerHTML = '';
-  items.forEach(item => {
-    const el = document.createElement('div');
-    el.className = 'cert';
-    el.innerHTML = `
-      <div class="cert-cat">${catLabel(item.cat)}</div>
-      <div class="cert-name">${formatName(item.file)}</div>
-      <div class="arrow">→</div>
+  items.forEach(({ cat, file }) => {
+    const a = document.createElement('a');
+    a.className = 'item';
+    a.href = GH(`${DIR}/${cat}/${file}`);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.innerHTML = `
+      <span class="cat">${label(cat)}</span>
+      <span class="name">${title(file)}</span>
+      <span class="arr">-></span>
     `;
-    el.onclick = () => {
-      window.open(`${RAW}/${item.cat}/${encodeURIComponent(item.file)}`, '_blank');
-    };
-    listEl.appendChild(el);
+    listEl.appendChild(a);
   });
 }
 
-loadCerts();
+load();
 </script>
 </body>
 </html>
