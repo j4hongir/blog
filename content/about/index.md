@@ -34,6 +34,7 @@ toc = false
 - [Monkeytype](https://monkeytype.com/profile/gruvboxx)
 
 apps:
+- [HugTheBox](https://hugthebox.github.io)
 - [сайт для аналитики P&L в P2P на Bybit](https://jahamars.github.io/p2pcall)
 - [zola Prism theme](https://xpltt.vercel.app/)
 - [сайт для ТОУНКО "Vatan"](https://jahamars.github.io/tounko1/)
