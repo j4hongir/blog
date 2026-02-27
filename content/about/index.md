@@ -8,7 +8,7 @@ toc = false
 +++
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/ava1.jpg" alt="Jahongir Ahmadaliev" style="border-radius: 7%; width: 25%;"/>
+  <img src="https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/ava1.png" alt="Jahongir Ahmadaliev" style="border-radius: 7%; width: 25%;"/>
 </div>
 
 
@@ -19,8 +19,7 @@ toc = false
 
 Более подробно про меня в моем [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
 
-Доп ссылки:
-- [Ачивки](https://jahongir.ru/sert)  
+Доп ссылки: 
 - [Email](mailto:jahamarsi@gmail.com)  
 - [Telegram](https://t.me/xpltt)
 - [GitHub](https://github.com/jahamars/)  
