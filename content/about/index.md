@@ -10,7 +10,7 @@ toc = false
 ## я Жахонгир 
 Занимаюсь безопасностью и надежностью инфраструктуры. 
  
-Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства, присылай [pull request](https://github.com/jahamars/blog) )
+Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства [pull request](https://github.com/jahamars/blog?tab=contributing-ov-file) )
 
 Более подробно про меня в моем [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
 
@@ -24,7 +24,6 @@ toc = false
 - [Cybrary](https://app.cybrary.it/profile/jahamarsi)  
 - [Stepik](https://stepik.org/users/575177703/profile)
 - [Docker Hub](https://hub.docker.com/u/jahamars)  
-- [GitLab](https://gitlab.com/jahamarsi1)
 - [Monkeytype](https://monkeytype.com/profile/gruvboxx)
 
 apps:
