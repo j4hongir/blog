@@ -72,7 +72,7 @@ strict = "0"
 reactions_enabled = "1"
 emit_metadata = "0"
 input_position = "bottom"
-theme = "dark"
+theme = "transparent_light"
 lang = "ru"
 
 # Google Analytics
