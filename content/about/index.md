@@ -5,6 +5,7 @@ title = "Обо мне"
 [extra]
 no_header = true
 toc = false
+no_comments = true
 +++
 
 ## я Жахонгир 
