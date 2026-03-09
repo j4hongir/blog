@@ -13,7 +13,7 @@ no_comments = true
  
 Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства [pull request](https://github.com/jahamars/blog?tab=contributing-ov-file) )
 
-Более подробно про меня в моем [резюме](https://github.com/Jahamars/sert/raw/main/resume/ru.pdf)
+Более подробно про меня в моем [резюме](https://github.com/Jahamars/blog/blob/main/templates/sert/resume/ru.pdf)
 
 Доп ссылки: 
 - [Email](mailto:jahamarsi@gmail.com)  
