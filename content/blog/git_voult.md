@@ -18,13 +18,14 @@ authors = ["Jahongir Ahmadaliev"]
 
 Как это всё работает: `git-crypt` цепляется к Git через фильтры `clean` и `smudge`. При `git add` файл шифруется AES-256 и уходит на сервер в виде нечитаемого бинарника. При `git pull` — расшифровывается обратно. Ты работаешь с обычными markdown файлами, шифрование происходит незаметно. Плагин Obsidian Git просто вызывает стандартные git-команды изнутри Obsidian, поэтому с git-crypt работает без каких-либо проблем.
 
-### установка
+### Установка
 
+arch based 
 ```bash
 sudo pacman -S gnupg git-crypt
 ```
 
-Debian/Ubuntu
+debian based 
 ```bash
 sudo apt install gnupg git-crypt
 ```
