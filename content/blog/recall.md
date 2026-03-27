@@ -1,6 +1,6 @@
 +++
 title = "Аналог Windows Recall на Линукс без ИИ"
-date = 2026-02-27
+date = 2026-03-27
 [taxonomies]
 categories = ["tech"]
 tags = ["recall", "ocr", "bash", "guide"]
