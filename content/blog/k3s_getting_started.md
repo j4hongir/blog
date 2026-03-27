@@ -1,7 +1,7 @@
 +++
 title = "K3s за 5 минут"
 date = 2025-12-27
-description = "Как быстро поднять k3s-кластер на физических или виртуальных хостах"
+<!-- description = "Как быстро поднять k3s-кластер на физических или виртуальных хостах" -->
 [taxonomies]
 categories = ["tech"]
 tags = ["k3s", "k8s", "kubernetes", "guide", "devops"]
