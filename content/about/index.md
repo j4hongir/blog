@@ -10,7 +10,8 @@ no_comments = true
 
 ## я Жахонгир 
 Занимаюсь безопасностью и надежностью инфраструктуры. 
-Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства [pr](https://github.com/jahamars/blog?tab=contributing-ov-file) )
+Здесь я документирую всё полезное из своего опыта. (блог открыт для соавторства [pr](https://github.com/jahamars/blog?tab=contributing-ov-file)
+
 Более подробно про меня в моем [резюме](https://github.com/Jahamars/blog/blob/main/templates/sert/resume/ru.pdf)
 
 доп ссылки: 
@@ -25,7 +26,6 @@ no_comments = true
 - [stepik](https://stepik.org/users/575177703/profile)
 - [docker Hub](https://hub.docker.com/u/jahamars)  
 
-apps:
 - [сайт для аналитики P&L в P2P на Bybit](https://jahamars.github.io/p2pcall/)
 - [zola prism theme](https://xpltt.vercel.app/)
 - [newtab для  и firefox](https://addons.mozilla.org/en-US/firefox/addon/ts-startpage/)
