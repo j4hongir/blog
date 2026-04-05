@@ -39,7 +39,7 @@ show_toc = true
 
 # background_gradient = "#282828"
 #background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/1.jpeg"
-background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/2.png"
+background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/3.jpeg"
 # background_image = "https://raw.githubusercontent.com/Jahamars/zola-prism/refs/heads/main/static/bg2.png"
 
 date_format = "%d.%m.%Y"
