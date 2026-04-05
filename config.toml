@@ -39,8 +39,7 @@ show_toc = true
 
 # background_gradient = "#282828"
 #background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/1.jpeg"
-background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/1.gif"
-# background_image = "https://raw.githubusercontent.com/Jahamars/zola-prism/refs/heads/main/static/bg2.png"
+background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/3.jpg"
 
 date_format = "%d.%m.%Y"
 
@@ -74,7 +73,7 @@ strict = "0"
 reactions_enabled = "1"
 emit_metadata = "0"
 input_position = "bottom"
-theme = "transparent_dark"
+theme = "transparent_light"
 lang = "ru"
 
 # Google Analytics
