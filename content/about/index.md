@@ -26,8 +26,8 @@ no_comments = true
 - [docker Hub](https://hub.docker.com/u/jahamars)  
 
 apps:
-- [сайт для аналитики P&L в P2P на Bybit](https://jahamars.github.io/p2pcall)
+- [сайт для аналитики P&L в P2P на Bybit](https://jahamars.github.io/p2pcall/)
 - [zola prism theme](https://xpltt.vercel.app/)
-- [newtab для chrome и firefox](https://jahamars.github.io/startpage/)
-- [сайт для ТОУНКО "Vatan"](https://jahamars.github.io/tounko1/)
+- [newtab для  и firefox](https://addons.mozilla.org/en-US/firefox/addon/ts-startpage/)
+- [сайт для ТОУНКО "Ватан"](https://jahamars.github.io/tounko1/)
 
