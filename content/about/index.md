@@ -8,8 +8,9 @@ toc = false
 no_comments = true
 +++
 
-## я Жахонгир 
-Занимаюсь безопасностью и надежностью инфраструктуры
+## я Жахонгир
+занимаюсь безопасностью и надежностью инфраструктуры.
+
 Здесь я документирую всё полезное из своего опыта (блог открыт для соавторства [pr](https://github.com/jahamars/blog?tab=contributing-ov-file))
 
 Более подробно про меня в моем [резюме](https://github.com/Jahamars/blog/blob/main/templates/sert/resume/ru.pdf)
