@@ -8,7 +8,7 @@ generate_feeds = true
 feed_filenames = ["rss.xml", "atom.xml"]  
 
 title = "DevSecOps notes"
-description = "блог про технологии и не только"
+description = "то что сработало - записал"
 default_language = "ru"
 theme = "prism"
 
