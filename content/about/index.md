@@ -1,5 +1,5 @@
 +++
-title = "Обо мне"
+title = "about"
 
 
 [extra]
