@@ -4,3 +4,6 @@
 [submodule "templates/talks"]
 	path = templates/talks
 	url = https://github.com/Jahamars/tech-talks.git
+[submodule "templates/certs"]
+	path = templates/certs
+	url = https://github.com/Jahamars/certs.git

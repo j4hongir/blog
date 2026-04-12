@@ -52,7 +52,7 @@ sam_menu = [
     { text = "authors", link = "/authors" },
     { text = "about", link = "/about" },
     { text = "github", link = "https://github.com/jahamars" },
-    { text = "serts", link = "/sert" },
+    { text = "certs", link = "/certs" },
     { text = "talks", link = "/talks" }
     # { text = "Категории", link = "/categories" },
     # { text = "Теги", link = "/tags" },
