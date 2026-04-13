@@ -48,7 +48,7 @@ show_word_count = true
 show_reading_time = true
 
 sam_menu = [
-    { text = "blog", link = "/blog" },
+    { text = "notes", link = "/blog" },
     { text = "authors", link = "/authors" },
     { text = "about", link = "/about" },
     { text = "github", link = "https://github.com/jahamars" },
@@ -81,7 +81,7 @@ google_analytics_id = "G-ELR5QJ5CKK"
 
 # Footer
 [extra.sam_footer]
-text = "just a tech blog"
+text = "just a tech notes"
 
 # Author (optional)
 # [extra.author]
