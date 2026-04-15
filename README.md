@@ -1,15 +1,8 @@
-# DevSecOps Notes
-Технический блог о DevOps, Security, Linux и смежных темах.
 
-## Стек
-- Zola (Static Site Generator)
-- Тема Prism
-- Деплой: Vercel/Netlify/GH-pages
+# технический блог о DevOps, Security, Linux и смежных темах.
 
-## Соавторство
-Блог открыт для соавторства. Читайте [CONTRIBUTING.md](CONTRIBUTING.md)
+## блог открыт для соавторства читайте [CONTRIBUTING.md](CONTRIBUTING.md)
 
 Email: jahamarsi@gmail.com
 
-## Лицензия
-MIT
+## лицензия GPLv3
