@@ -34,6 +34,7 @@ keywords = "DevOps, Linux, Cloud, Docker, Kubernetes, CI/CD, Ansible, Terraform,
 author = "Jahongir Ahmadaliev"
 banner = "favicon/android-chrome-512x512.png"
 show_toc = true
+math = true
 
 
 # background_gradient = "#282828"
