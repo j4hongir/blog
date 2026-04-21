@@ -52,7 +52,7 @@ sam_menu = [
     { text = "notes", link = "/blog" },
     { text = "authors", link = "/authors" },
     { text = "about", link = "/about" },
-    { text = "github", link = "https://github.com/jahamars" },
+    { text = "github", link = "https://github.com/j4hongir" },
     { text = "certs", link = "/certs" },
     { text = "talks", link = "/talks" }
     # { text = "Категории", link = "/categories" },
@@ -64,7 +64,7 @@ sam_bottom_menu = true
 
 [extra.giscus]
 enabled = true
-repo = "jahamars/blog"
+repo = "j4hongir/blog"
 repo_id = "R_kgDOOGPcjw"
 category = "Announcements"
 category_id = "DIC_kwDOOGPcj84C0ShM"
