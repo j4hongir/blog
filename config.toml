@@ -77,8 +77,8 @@ theme = "transparent_light"
 lang = "ru"
 
 # Google Analytics
-[extra.analytics]
-google_analytics_id = "G-ELR5QJ5CKK"
+# [extra.analytics]
+# google_analytics_id = "G-ELR5QJ5CKK"
 
 # Footer
 [extra.sam_footer]
