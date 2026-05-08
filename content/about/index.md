@@ -21,5 +21,5 @@ no_comments = true
 
 
 - [сайт для аналитики P&L в p2p на Bybit](https://j4hongir.github.io/p2pcall/)
-- [темя для SSG Zola](https://xpltt.vercel.app/)
+- [тема для SSG Zola](https://xpltt.vercel.app/)
 - [newtab для firefox](https://addons.mozilla.org/en-US/firefox/addon/ts-startpage/)
