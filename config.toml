@@ -82,7 +82,7 @@ lang = "ru"
 
 # Footer
 [extra.sam_footer]
-text = "just a tech notes"
+text = '2026 | Jahongir Ahmadaliev | <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ru" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>'-SA 4.0"
 
 # Author (optional)
 # [extra.author]
