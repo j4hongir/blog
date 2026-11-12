@@ -1,4 +1,4 @@
-base_url = "https://jahongir.ru"
+base_url = "https://j4hongir.github.io/blog"
 
 compile_sass = true
 minify_html = true  
