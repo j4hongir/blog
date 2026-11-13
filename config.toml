@@ -1,5 +1,4 @@
-base_url = "https://j4hongir.github.io/blog"
-
+base_url = "https://xplt.is-a.dev"
 
 compile_sass = true
 minify_html = true  
@@ -62,10 +61,10 @@ show_reading_time = true
 # ]
 
 sam_menu = [
-    { text = "Заметки", link = "blog/" },
-    { text = "Выступления", link = "talks/" },
-    { text = "Сертификаты", link = "certs/" },
-    { text = "Об авторе", link = "about/" }
+{ text = "Заметки", link = "/blog/" },
+{ text = "Выступления", link = "/talks/" },
+{ text = "Сертификаты", link = "/certs/" },
+{ text = "Об авторе", link = "/about/" }
 ]
 
 sam_bottom_menu = true
