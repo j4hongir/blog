@@ -1,0 +1,25 @@
+{% if config.extra.giscus.enabled %}
+<div id="comments-mount" class="giscus" data-theme-light="{{ config.extra.giscus.theme | default(value='light') }}" data-theme-dark="{{ config.extra.giscus.theme_dark | default(value='transparent_dark') }}"></div>
+<script>
+(() => {
+    const mount = document.getElementById('comments-mount');
+    const script = document.createElement('script');
+    const settings = {
+      repo: {{ config.extra.giscus.repo | json_encode | safe }},
+      'repo-id': {{ config.extra.giscus.repo_id | json_encode | safe }},
+      category: {{ config.extra.giscus.category | json_encode | safe }},
+      'category-id': {{ config.extra.giscus.category_id | json_encode | safe }},
+      mapping: {{ config.extra.giscus.mapping | json_encode | safe }},
+      strict: {{ config.extra.giscus.strict | json_encode | safe }},
+      'reactions-enabled': {{ config.extra.giscus.reactions_enabled | json_encode | safe }},
+      'emit-metadata': {{ config.extra.giscus.emit_metadata | json_encode | safe }},
+      'input-position': {{ config.extra.giscus.input_position | json_encode | safe }},
+      theme: document.documentElement.dataset.theme === 'dark' ? mount.dataset.themeDark : mount.dataset.themeLight,
+      lang: {{ config.extra.giscus.lang | json_encode | safe }}
+    };
+    script.src = 'https://giscus.app/client.js'; script.async = true; script.crossOrigin = 'anonymous';
+    for (const [key, value] of Object.entries(settings)) script.setAttribute('data-' + key, value);
+    mount.appendChild(script);
+})();
+</script>
+{% endif %}

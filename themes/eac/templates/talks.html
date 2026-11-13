@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block math %}{% endblock math %}
+{% block content %}{% include "talks/content.html" %}{% endblock content %}
+{% block scripts %}
+<script>{{ load_data(path='templates/talks/vendor/marked-9.1.6.min.js', format='plain') | safe }}</script>
+<script>{{ load_data(path='templates/talks/vendor/purify-3.3.1.min.js', format='plain') | safe }}</script>
+<script>{{ load_data(path='templates/talks/app.js', format='plain') | safe }}</script>
+{% endblock scripts %}

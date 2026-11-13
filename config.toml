@@ -10,7 +10,7 @@ feed_filenames = ["rss.xml", "atom.xml"]
 title = "eac"
 description = "experience as code"
 default_language = "ru"
-theme = "prism"
+theme = "eac"
 
 build_search_index = false
 
@@ -38,7 +38,6 @@ show_toc = true
 math = true
 
 
-background_gradient = "#1d2021"
 #background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/1.jpeg"
 # background_image = "https://raw.githubusercontent.com/Jahamars/blog/refs/heads/main/static/photos/3.jpg"
 # background_image = "https://raw.githubusercontent.com/j4hongir/wayland/refs/heads/main/walls/cnassa.png"
@@ -63,15 +62,18 @@ show_reading_time = true
 # ]
 
 sam_menu = [
-    { text = "notes", link = "/blog/blog/" },
-    { text = "authors", link = "/blog/authors/" },
-    { text = "about", link = "/blog/about/" },
-    { text = "github", link = "https://github.com/j4hongir" },
-    { text = "certs", link = "/blog/certs/" },
-    { text = "talks", link = "/blog/talks/" }
+    { text = "Заметки", link = "blog/" },
+    { text = "Выступления", link = "talks/" },
+    { text = "Сертификаты", link = "certs/" },
+    { text = "Об авторе", link = "about/" }
 ]
 
 sam_bottom_menu = true
+
+[extra.eac]
+github = "https://github.com/j4hongir"
+source = "https://github.com/j4hongir/blog"
+author_name = "Жахонгир Ахмадалиев"
 
 [extra.giscus]
 enabled = true
@@ -84,7 +86,8 @@ strict = "0"
 reactions_enabled = "1"
 emit_metadata = "0"
 input_position = "bottom"
-theme = "transparent_light"
+theme = "light"
+theme_dark = "transparent_dark"
 lang = "ru"
 
 # Google Analytics

@@ -1,0 +1,47 @@
+{% macro theme_button() %}
+<button class="theme-toggle" type="button" aria-label="Переключить цветовую тему" title="Переключить цветовую тему" hidden>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg>
+</button>
+{% endmacro theme_button %}
+
+{% macro format_date(date) %}{{ date | date(format=config.extra.date_format | default(value='%d.%m.%Y')) }}{% endmacro format_date %}
+
+{% macro page_description(page, length=160) %}
+{%- if page.description -%}{{ page.description | striptags | truncate(length=length) }}
+{%- elif page.summary -%}{{ page.summary | striptags | truncate(length=length) }}
+{%- else -%}{{ page.content | striptags | truncate(length=length) }}{%- endif -%}
+{% endmacro page_description %}
+
+{% macro post_row(page) %}
+<article class="post-row">
+    <div class="post-date">{% if page.date %}<time datetime="{{ page.date }}">{{ macros::format_date(date=page.date) }}</time>{% endif %}</div>
+    <div class="post-body">
+        <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+        <p>{{ macros::page_description(page=page, length=155) }}</p>
+        <div class="post-meta">
+            {% if page.taxonomies.tags %}{% for tag in page.taxonomies.tags | slice(end=3) %}<a href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>{% endfor %}{% endif %}
+            {% if config.extra.show_reading_time %}<span class="reading-time">{{ page.reading_time }} мин чтения</span>{% endif %}
+        </div>
+    </div>
+    <span class="post-arrow" aria-hidden="true">↗</span>
+</article>
+{% endmacro post_row %}
+
+{% macro page_hero(title, description='', eyebrow='Архив') %}
+<header class="page-heading"><p class="eyebrow">{{ eyebrow }}</p><h1>{{ title }}</h1>{% if description %}<p class="page-description">{{ description }}</p>{% endif %}</header>
+{% endmacro page_hero %}
+
+{% macro pagination(paginator) %}
+{% if paginator and paginator.number_pagers > 1 %}
+<nav class="pagination" aria-label="Страницы архива">
+    {% if paginator.previous %}<a href="{{ paginator.previous }}">← Новее</a>{% else %}<span></span>{% endif %}
+    <span>{{ paginator.current_index }} / {{ paginator.number_pagers }}</span>
+    {% if paginator.next %}<a href="{{ paginator.next }}">Ранее →</a>{% else %}<span></span>{% endif %}
+</nav>
+{% endif %}
+{% endmacro pagination %}
+
+{% macro toc(entries) %}
+<ol>{% for entry in entries %}<li><a class="toc-link" href="#{{ entry.id }}" data-target="{{ entry.id }}">{{ entry.title }}</a>{% if entry.children %}{{ macros::toc(entries=entry.children) }}{% endif %}</li>{% endfor %}</ol>
+{% endmacro toc %}

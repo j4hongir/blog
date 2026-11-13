@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+{% if taxonomy.name == 'tags' %}{% set eyebrow = 'Указатель / Теги' %}{% elif taxonomy.name == 'authors' %}{% set eyebrow = 'Журнал / Автор' %}{% else %}{% set eyebrow = 'Журнал / Категория' %}{% endif %}
+{{ macros::page_hero(title=term.name, description='', eyebrow=eyebrow) }}
+<div class="archive-toolbar"><span>Записей: {{ term.pages | length }}</span><a href="{{ get_url(path=taxonomy.name ~ '/', trailing_slash=true) }}">← Весь указатель</a></div>
+{% if paginator %}{% set posts = paginator.pages %}{% else %}{% set posts = term.pages %}{% endif %}
+<div class="post-list archive-list">{% for page in posts %}{{ macros::post_row(page=page) }}{% endfor %}</div>
+{% if paginator %}{{ macros::pagination(paginator=paginator) }}{% endif %}
+{% endblock content %}

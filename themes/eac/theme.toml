@@ -1,0 +1,7 @@
+name = "eac"
+description = "A quiet, typographic engineering journal."
+license = "GPL-3.0-only"
+min_version = "0.22.1"
+
+[author]
+name = "Jahongir Ahmadaliev"

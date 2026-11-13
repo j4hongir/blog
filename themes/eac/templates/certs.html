@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block math %}{% endblock math %}
+{% block content %}{% include "certs/content.html" %}{% endblock content %}
+{% block scripts %}<script>{{ load_data(path='templates/certs/app.js', format='plain') | safe }}</script>{% endblock scripts %}

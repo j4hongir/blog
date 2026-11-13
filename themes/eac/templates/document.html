@@ -1,0 +1,73 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script>
+    (() => { let t; try { t = localStorage.getItem('eac-theme'); } catch (_) {} document.documentElement.dataset.theme = t === 'light' || t === 'dark' ? t : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); })();
+    </script>
+    {% set meta_title = config.title ~ " — " ~ config.description %}
+    {% set meta_description = config.description %}
+    {% if page %}
+        {% set meta_title = page.title ~ " — " ~ config.title %}
+        {% set meta_description = macros::page_description(page=page) | trim %}
+    {% elif section and section.title %}
+        {% set meta_title = section.title ~ " — " ~ config.title %}
+        {% if section.description %}{% set meta_description = section.description %}{% endif %}
+    {% elif term %}
+        {% set meta_title = term.name ~ " — " ~ config.title %}
+    {% elif taxonomy %}
+        {% set meta_title = taxonomy.name ~ " — " ~ config.title %}
+    {% endif %}
+    <title>{% block htmltitle %}{{ meta_title }}{% endblock htmltitle %}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="keywords" content="{{ config.extra.keywords | default(value='') }}">
+    <meta name="theme-color" content="#f8f8f5" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#181a1b" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="{{ current_url | default(value=config.base_url) }}">
+    <link rel="icon" href="{{ get_url(path='favicon/favicon.ico') }}" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='favicon/favicon-32x32.png') }}">
+    <link rel="apple-touch-icon" href="{{ get_url(path='favicon/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ get_url(path='favicon/site.webmanifest') }}">
+    <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}">
+    <script defer src="{{ get_url(path='site.js', cachebust=true) }}"></script>
+    <meta property="og:type" content="{% if page and page.date %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta_title }}">
+    <meta name="twitter:description" content="{{ meta_description }}">
+    {% if config.extra.banner %}
+    <meta property="og:image" content="{{ get_url(path=config.extra.banner) }}">
+    <meta name="twitter:image" content="{{ get_url(path=config.extra.banner) }}">
+    {% endif %}
+    {% if config.generate_feeds %}
+    {% for feed in config.feed_filenames %}
+    <link rel="alternate" type="{% if feed == 'atom.xml' %}application/atom+xml{% else %}application/rss+xml{% endif %}" title="{{ config.title }} · {{ feed }}" href="{{ get_url(path=feed) }}">
+    {% endfor %}
+    {% endif %}
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","name":{{ config.title | json_encode | safe }},"url":{{ config.base_url | json_encode | safe }},"description":{{ config.description | json_encode | safe }},"author":{"@type":"Person","name":{{ config.extra.author | json_encode | safe }}}}
+    </script>
+    {% block math %}{% if config.extra.math and page and page.extra.math | default(value=true) %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.querySelector('.prose') || document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+    {% endif %}{% endblock math %}
+    {% if config.extra.analytics.google_analytics_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.analytics.google_analytics_id }}"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ config.extra.analytics.google_analytics_id }}');</script>
+    {% endif %}
+    {% block head %}{% endblock head %}
+</head>
+<body data-copy-code="{{ config.extra.features.copy_code_button | default(value=false) }}" data-smooth-scroll="{{ config.extra.features.smooth_scroll | default(value=false) }}">
+    <a class="skip-link" href="#content">К содержанию</a>
+    {% block body %}{% endblock body %}
+    {% block scripts %}{% endblock scripts %}
+</body>
+</html>

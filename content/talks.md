@@ -1,4 +1,5 @@
 +++
-title = "Redirect"
-template = "talks/index.html"
+title = "Выступления"
+description = "Технические доклады: презентации, исходный код и практические примеры."
+template = "talks.html"
 +++

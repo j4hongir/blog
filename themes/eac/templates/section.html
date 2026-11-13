@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block content %}
+{% if section.title == 'notes' %}{% set heading = 'Заметки' %}{% else %}{% set heading = section.title %}{% endif %}
+{{ macros::page_hero(title=heading, description=section.description | default(value='Опыт, который стоит сохранить. И которым стоит поделиться.'), eyebrow='Журнал / Все записи') }}
+{% if section.content %}<div class="prose section-intro">{{ section.content | safe }}</div>{% endif %}
+<div class="archive-toolbar"><span>Записей: {{ section.pages | length }}</span><nav aria-label="Смотреть по"><a href="{{ get_url(path='tags/', trailing_slash=true) }}">По тегам ↗</a><a href="{{ get_url(path='categories/', trailing_slash=true) }}">По категориям ↗</a></nav></div>
+{% if paginator %}{% set posts = paginator.pages %}{% else %}{% set posts = section.pages %}{% endif %}
+<div class="post-list archive-list">{% for page in posts %}{{ macros::post_row(page=page) }}{% else %}<p class="empty-state">Пока нет записей.</p>{% endfor %}</div>
+{% if paginator %}{{ macros::pagination(paginator=paginator) }}{% endif %}
+{% if section.subsections %}<section class="subsections"><h2>Разделы</h2>{% for path in section.subsections %}{% set sub = get_section(path=path) %}<a class="taxonomy-item" href="{{ sub.permalink }}"><span>{{ sub.title }}</span><span aria-hidden="true">↗</span></a>{% endfor %}</section>{% endif %}
+{% endblock content %}

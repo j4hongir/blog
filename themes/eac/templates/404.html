@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block htmltitle %}404 — eac{% endblock htmltitle %}
+{% block content %}<section class="not-found"><p class="eyebrow">Ошибка 404</p><h1>Не тот путь.</h1><p>Страница переехала или её здесь никогда не было.</p><a class="text-link" href="{{ get_url(path='blog/', trailing_slash=true) }}">Вернуться к записям →</a></section>{% endblock content %}

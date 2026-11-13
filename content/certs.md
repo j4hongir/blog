@@ -1,4 +1,5 @@
 +++
-title = "Redirect"
-template = "certs/index.html"
+title = "Сертификаты"
+description = "Курсы, соревнования, достижения и резюме Жахонгира Ахмадалиева."
+template = "certs.html"
 +++
