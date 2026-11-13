@@ -23,12 +23,13 @@ def link(path):
     return escape(urljoin(BASE, path), quote=True)
 
 
-for module, title in [('certs', 'Сертификаты'), ('talks', 'Выступления')]:
+for module, title in [('certs', 'Достижения'), ('talks', 'Доклады')]:
     directory = ROOT / 'templates' / module
     assets = directory / 'assets'
     assets.mkdir(exist_ok=True)
     for filename in ['style.css', 'site.js']:
         shutil.copy2(ROOT / 'themes/eac/static' / filename, assets / filename)
+    shutil.copytree(ROOT / 'themes/eac/static/fonts', assets / 'fonts', dirs_exist_ok=True)
     menu = '\n'.join(
         f'<a href="{link(item["link"])}"' + (' aria-current="page"' if item['link'] == module + '/' else '') + f'>{escape(item["text"])}</a>'
         for item in EXTRA['sam_menu']
@@ -46,6 +47,7 @@ for module, title in [('certs', 'Сертификаты'), ('talks', 'Высту
   <meta name="description" content="{title}: {escape(EXTRA['author'])}, Linux, DevOps, Security.">
   <link rel="icon" href="{link('favicon/favicon.ico')}">
   <script>(() => {{ let t; try {{ t = localStorage.getItem('eac-theme'); }} catch (_) {{}} document.documentElement.dataset.theme = t === 'light' || t === 'dark' ? t : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }})();</script>
+  <link rel="preload" href="assets/fonts/golos-text-ru-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
   <script defer src="assets/site.js"></script>
 </head>
@@ -53,14 +55,14 @@ for module, title in [('certs', 'Сертификаты'), ('talks', 'Высту
 <a class="skip-link" href="#content">К содержанию</a>
 <div class="site-shell">
   <header class="site-header">
-    <a class="wordmark" href="{link('')}" aria-label="eac — главная"><span class="brand-mark" aria-hidden="true"></span>eac<span class="wordmark-caption">experience as code</span></a>
+    <a class="wordmark" href="{link('')}" aria-label="eac — главная">eac<span class="wordmark-caption">experience as code</span></a>
     <nav class="site-nav" aria-label="Основная навигация">{menu}</nav>
     {TOGGLE}
   </header>
   <main id="content" tabindex="-1">{content}</main>
   <footer class="site-footer">
-    <div class="footer-top"><a class="footer-name" href="{link('')}">eac<span> / experience as code</span></a><nav aria-label="Дополнительная навигация"><a href="{link('authors/')}">Авторы</a><a href="{link('tags/')}">Теги</a><a href="{escape(EXTRA['eac']['github'])}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="{link('rss.xml')}">RSS</a><a href="{link('atom.xml')}">Atom</a></nav></div>
-    <div class="footer-bottom"><span>{EXTRA['sam_footer']['text']}</span><a href="{escape(EXTRA['eac']['source'])}">Исходный код ↗</a></div>
+    <div class="footer-top"><a class="footer-name" href="{link('')}">eac<span> / experience as code</span></a><nav aria-label="Дополнительная навигация"><a href="{link('authors/')}">Авторы</a><a href="{link('tags/')}">Теги</a><a href="{escape(EXTRA['eac']['github'])}" target="_blank" rel="noopener noreferrer">GitHub</a><a href="{link('rss.xml')}">RSS</a><a href="{link('atom.xml')}">Atom</a></nav></div>
+    <div class="footer-bottom"><span>{EXTRA['sam_footer']['text']}</span></div>
   </footer>
 </div>
 <button id="scroll-to-top" class="scroll-top" type="button" aria-label="Наверх" hidden>↑</button>
@@ -70,4 +72,4 @@ for module, title in [('certs', 'Сертификаты'), ('talks', 'Высту
 </html>
 '''
     (directory / 'index.html').write_text(html)
-    print(f'SYNC {module}: index.html, assets/style.css, assets/site.js')
+    print(f'SYNC {module}: index.html, assets/style.css, assets/site.js, assets/fonts/')
