@@ -1,0 +1,13 @@
+{% extends "page.html" %}
+{% block article_content %}
+{# Taxonomies are available at template-render time, after Markdown processing. #}
+{% set parts = page.content | split(pat="<!-- project-authors -->") %}
+{{ parts | first | safe }}
+{% set authors = get_taxonomy(kind="authors") %}
+<ul>
+{% for author in authors.items %}
+<li><a href="{{ author.permalink }}">{{ author.name }}</a></li>
+{% endfor %}
+</ul>
+{% if parts | length > 1 %}{{ parts | last | safe }}{% endif %}
+{% endblock article_content %}

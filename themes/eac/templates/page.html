@@ -19,8 +19,8 @@
     <aside class="article-sidebar"><details class="table-of-contents" open><summary>На этой странице</summary><nav aria-label="Оглавление">{{ macros::toc(entries=page.toc) }}</nav></details></aside>
     {% endif %}
     <div class="article-main">
-        <article class="prose" id="article-body">{{ page.content | safe }}</article>
-        {% if page.date %}<nav class="article-end" aria-label="После статьи"><a href="{{ get_url(path='blog/', trailing_slash=true) }}">← Все записи</a><a href="{{ get_url(path='rss.xml') }}">RSS ↗</a></nav>{% endif %}
+        <article class="prose" id="article-body">{% block article_content %}{{ page.content | safe }}{% endblock article_content %}</article>
+        {% if page.date %}<nav class="article-end" aria-label="После статьи"><a href="{{ get_url(path='blog/', trailing_slash=true) }}">← Все записи</a><a href="{{ get_url(path='rss.xml') }}">RSS</a></nav>{% endif %}
         {% if config.extra.comments and not page.extra.no_comments %}<section class="comments" aria-label="Комментарии"><h2>Обсуждение</h2>{% include "comments.html" %}</section>{% endif %}
     </div>
 </div>

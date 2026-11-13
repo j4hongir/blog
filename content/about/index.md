@@ -1,5 +1,6 @@
 +++
-title = "about"
+title = "О проекте"
+description = "Жахонгир Ахмадалиев. Безопасность и надёжность инфраструктуры, технические заметки и проекты."
 
 
 [extra]
@@ -8,20 +9,19 @@ toc = false
 no_comments = true
 +++
 
-## я Жахонгир Ахмадалиев
-занимаюсь безопасностью и надежностью инфраструктуры.
+## Я — Жахонгир Ахмадалиев
+Занимаюсь безопасностью и надёжностью инфраструктуры. В этом блоге делюсь полезным из своего опыта.
+Подробнее обо мне — в [резюме](https://github.com/j4hongir/certs/blob/main/resume/sec.pdf).
 
-Здесь я документирую всё полезное из своего опыта (блог открыт для соавторства [pr](https://github.com/j4hongir/blog?tab=contributing-ov-file))
-
-Более подробно про меня в моем [резюме](https://github.com/j4hongir/certs/blob/main/resume/sec.pdf)
-
-[rss](https://jahongir.ru/rss.xml) · [atom](https://jahongir.ru/atom.xml)
-
-доп ссылки: 
-
-[email](mailto:jahamarsi@gmail.com) · [telegram](https://t.me/xpltt) · [github](https://github.com/j4hongir/) · [habr](https://habr.com/ru/users/xpltt/) · [monkeytype](https://monkeytype.com/profile/gruvboxx)
+Блог открыт для соавторства: предложить статью или исправление можно через [pull request](https://github.com/j4hongir/blog/blob/main/CONTRIBUTING.md). 
+Здесь публикуются и другие авторы. Их материалы можно найти на [странице авторов](../authors/).
 
 
-- [сайт для аналитики P&L в p2p на Bybit](https://j4hongir.github.io/p2pcall/)
-- [тема для SSG Zola](https://xpltt.vercel.app/)
-- [newtab для firefox](https://addons.mozilla.org/en-US/firefox/addon/ts-startpage/)
+### Контакты и ссылки
+
+[Email](mailto:jahamarsi@gmail.com) · [Telegram](https://t.me/xpltt) · [GitHub](https://github.com/j4hongir/) · [Habr](https://habr.com/ru/users/xpltt/) · [Monkeytype](https://monkeytype.com/profile/gruvboxx)
+
+### Другие проекты
+- [Аналитика P&L для P2P на Bybit](https://j4hongir.github.io/p2pcall/)
+- [Тема для Zola](https://xpltt.vercel.app/)
+- [Стартовая страница для Firefox](https://addons.mozilla.org/en-US/firefox/addon/ts-startpage/)

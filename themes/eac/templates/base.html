@@ -3,7 +3,7 @@
 {% block body %}
 <div class="site-shell">
     <header class="site-header">
-        <a class="wordmark" href="{{ get_url(path='/', trailing_slash=true) }}" aria-label="eac — главная"><span class="brand-mark" aria-hidden="true"></span>{{ config.title }}<span class="wordmark-caption">{{ config.description }}</span></a>
+        <a class="wordmark" href="{{ get_url(path='/', trailing_slash=true) }}" aria-label="eac — главная">{{ config.title }}<span class="wordmark-caption">{{ config.description }}</span></a>
         <nav class="site-nav" aria-label="Основная навигация">
             {% for link in config.extra.sam_menu %}
             {% set href = get_url(path=link.link, trailing_slash=true) %}
@@ -21,11 +21,11 @@
                 <a href="{{ get_url(path='authors/', trailing_slash=true) }}">Авторы</a>
                 <a href="{{ get_url(path='tags/', trailing_slash=true) }}">Теги</a>
                 <a href="{{ get_url(path='categories/', trailing_slash=true) }}">Категории</a>
-                <a href="{{ config.extra.eac.github }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                <a href="{{ config.extra.eac.github }}" target="_blank" rel="noopener noreferrer">GitHub </a>
                 {% if config.generate_feeds %}<a href="{{ get_url(path='rss.xml') }}">RSS</a><a href="{{ get_url(path='atom.xml') }}">Atom</a>{% endif %}
             </nav>{% endif %}
         </div>
-        <div class="footer-bottom"><span>{% if config.extra.sam_footer %}{{ config.extra.sam_footer.text | safe }}{% endif %}</span><span>Статика. Zola. <a href="{{ config.extra.eac.source }}">Исходный код ↗</a></span></div>
+        <div class="footer-bottom"><span>{% if config.extra.sam_footer %}{{ config.extra.sam_footer.text | safe }}{% endif %}</span></div>
     </footer>
 </div>
 <button id="scroll-to-top" class="scroll-top" type="button" aria-label="Наверх" title="Наверх" hidden>↑</button>

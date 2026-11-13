@@ -62,9 +62,9 @@ show_reading_time = true
 
 sam_menu = [
 { text = "Заметки", link = "/blog/" },
-{ text = "Выступления", link = "/talks/" },
-{ text = "Сертификаты", link = "/certs/" },
-{ text = "Об авторе", link = "/about/" }
+{ text = "Доклады", link = "/talks/" },
+{ text = "Достижения", link = "/certs/" },
+{ text = "О проекте", link = "/about/" }
 ]
 
 sam_bottom_menu = true

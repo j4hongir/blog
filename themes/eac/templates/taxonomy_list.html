@@ -3,5 +3,5 @@
 {% block content %}
 {% if taxonomy.name == 'tags' %}{% set heading = 'Теги' %}{% set description = 'Найти нужное по теме, инструменту или технологии.' %}{% elif taxonomy.name == 'authors' %}{% set heading = 'Авторы' %}{% set description = 'Люди, которые делятся своим опытом.' %}{% else %}{% set heading = 'Категории' %}{% set description = 'Техническое. И не только.' %}{% endif %}
 {{ macros::page_hero(title=heading, description=description, eyebrow='Указатель') }}
-<div class="taxonomy-list">{% for term in terms %}<a class="taxonomy-item" href="{{ term.permalink }}"><span>{% if taxonomy.name == 'tags' %}<span class="accent-text">#</span> {% endif %}{{ term.name }}</span><span class="taxonomy-count">{{ term.pages | length }} <span aria-hidden="true">↗</span></span></a>{% else %}<p class="empty-state">Здесь пока пусто.</p>{% endfor %}</div>
+<div class="taxonomy-list">{% for term in terms %}<a class="taxonomy-item" href="{{ term.permalink }}"><span>{% if taxonomy.name == 'tags' %}<span class="accent-text">#</span> {% endif %}{{ term.name }}</span><span class="taxonomy-count">{{ term.pages | length }} </span></a>{% else %}<p class="empty-state">Здесь пока пусто.</p>{% endfor %}</div>
 {% endblock content %}
