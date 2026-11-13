@@ -9,9 +9,9 @@ toc = false
 no_comments = true
 +++
 
-## Я — Жахонгир Ахмадалиев
+## Я - Жахонгир Ахмадалиев
 Занимаюсь безопасностью и надёжностью инфраструктуры. В этом блоге делюсь полезным из своего опыта.
-Подробнее обо мне — в [резюме](https://github.com/j4hongir/certs/blob/main/resume/sec.pdf).
+Подробнее обо мне - в [резюме](https://github.com/j4hongir/certs/blob/main/resume/sec.pdf).
 
 Блог открыт для соавторства: предложить статью или исправление можно через [pull request](https://github.com/j4hongir/blog/blob/main/CONTRIBUTING.md). 
 Здесь публикуются и другие авторы. Их материалы можно найти на [странице авторов](../authors/).
