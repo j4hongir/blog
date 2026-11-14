@@ -7,7 +7,6 @@
 {% if config.extra.features.reading_progress_bar and page.date %}<div id="reading-progress" role="progressbar" aria-label="Прогресс чтения" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>{% endif %}
 {% if not page.extra.no_header %}
 <header class="page-heading article-heading">
-    <a class="eyebrow back-link" href="{{ get_url(path='blog/', trailing_slash=true) }}">← К записям</a>
     <h1>{{ page.title }}</h1>
     <div class="article-meta">{% if page.date %}<time datetime="{{ page.date }}">{{ macros::format_date(date=page.date) }}</time>{% endif %}{% if config.extra.show_reading_time %}<span>{{ page.reading_time }} мин чтения</span>{% endif %}{% if config.extra.show_word_count %}<span>{{ page.word_count }} слов</span>{% endif %}{% if page.updated %}<span>Обновлено {{ macros::format_date(date=page.updated) }}</span>{% endif %}</div>
     {% if page.taxonomies.authors %}<div class="byline">{% for author in page.taxonomies.authors %}<a href="{{ get_taxonomy_url(kind='authors', name=author) }}">{{ author }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</div>{% endif %}
