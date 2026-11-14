@@ -47,7 +47,7 @@ for module, title in [('certs', 'Достижения'), ('talks', 'Доклад
   <meta name="description" content="{title}: {escape(EXTRA['author'])}, Linux, DevOps, Security.">
   <link rel="icon" href="{link('favicon/favicon.ico')}">
   <script>(() => {{ let t; try {{ t = localStorage.getItem('eac-theme'); }} catch (_) {{}} document.documentElement.dataset.theme = t === 'light' || t === 'dark' ? t : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }})();</script>
-  <link rel="preload" href="assets/fonts/golos-text-ru-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-ru-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
   <script defer src="assets/site.js"></script>
 </head>
@@ -61,8 +61,8 @@ for module, title in [('certs', 'Достижения'), ('talks', 'Доклад
   </header>
   <main id="content" tabindex="-1">{content}</main>
   <footer class="site-footer">
-    <div class="footer-top"><a class="footer-name" href="{link('')}">eac<span> / experience as code</span></a><nav aria-label="Дополнительная навигация"><a href="{link('authors/')}">Авторы</a><a href="{link('tags/')}">Теги</a><a href="{escape(EXTRA['eac']['github'])}" target="_blank" rel="noopener noreferrer">GitHub</a><a href="{link('rss.xml')}">RSS</a><a href="{link('atom.xml')}">Atom</a></nav></div>
-    <div class="footer-bottom"><span>{EXTRA['sam_footer']['text']}</span></div>
+    <div class="footer-meta">{EXTRA['sam_footer']['text']}</div>
+    <nav class="footer-nav" aria-label="Дополнительная навигация"><a href="{link('authors/')}">Авторы</a><a href="{link('tags/')}">Теги</a><a href="{link('categories/')}">Категории</a><a href="{escape(EXTRA['eac']['github'])}" target="_blank" rel="noopener noreferrer">GitHub</a><a href="{link('rss.xml')}">RSS</a><a href="{link('atom.xml')}">Atom</a></nav>
   </footer>
 </div>
 <button id="scroll-to-top" class="scroll-top" type="button" aria-label="Наверх" hidden>↑</button>

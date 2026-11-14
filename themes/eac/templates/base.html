@@ -15,17 +15,14 @@
     </header>
     <main id="content" tabindex="-1">{% block content %}{% endblock content %}</main>
     <footer class="site-footer">
-        <div class="footer-top">
-            <a class="footer-name" href="{{ get_url(path='/', trailing_slash=true) }}">{{ config.title }}<span> / {{ config.description }}</span></a>
-            {% if config.extra.sam_bottom_menu %}<nav aria-label="Дополнительная навигация">
-                <a href="{{ get_url(path='authors/', trailing_slash=true) }}">Авторы</a>
-                <a href="{{ get_url(path='tags/', trailing_slash=true) }}">Теги</a>
-                <a href="{{ get_url(path='categories/', trailing_slash=true) }}">Категории</a>
-                <a href="{{ config.extra.eac.github }}" target="_blank" rel="noopener noreferrer">GitHub </a>
-                {% if config.generate_feeds %}<a href="{{ get_url(path='rss.xml') }}">RSS</a><a href="{{ get_url(path='atom.xml') }}">Atom</a>{% endif %}
-            </nav>{% endif %}
-        </div>
-        <div class="footer-bottom"><span>{% if config.extra.sam_footer %}{{ config.extra.sam_footer.text | safe }}{% endif %}</span></div>
+        <div class="footer-meta">{% if config.extra.sam_footer %}{{ config.extra.sam_footer.text | safe }}{% endif %}</div>
+        {% if config.extra.sam_bottom_menu %}<nav class="footer-nav" aria-label="Дополнительная навигация">
+            <a href="{{ get_url(path='authors/', trailing_slash=true) }}">Авторы</a>
+            <a href="{{ get_url(path='tags/', trailing_slash=true) }}">Теги</a>
+            <a href="{{ get_url(path='categories/', trailing_slash=true) }}">Категории</a>
+            <a href="{{ config.extra.eac.github }}" target="_blank" rel="noopener noreferrer">GitHub </a>
+            {% if config.generate_feeds %}<a href="{{ get_url(path='rss.xml') }}">RSS</a><a href="{{ get_url(path='atom.xml') }}">Atom</a>{% endif %}
+        </nav>{% endif %}
     </footer>
 </div>
 <button id="scroll-to-top" class="scroll-top" type="button" aria-label="Наверх" title="Наверх" hidden>↑</button>

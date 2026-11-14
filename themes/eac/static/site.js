@@ -106,10 +106,12 @@
   const progress = document.getElementById('reading-progress');
   const article = document.getElementById('article-body');
   const topButton = document.getElementById('scroll-to-top');
+  const footer = document.querySelector('.site-footer');
   let queued = false;
   const updateScroll = () => {
     queued = false;
-    if (topButton) topButton.hidden = window.scrollY < 600;
+    // Keep the floating control clear of footer navigation.
+    if (topButton) topButton.hidden = window.scrollY < 600 || (footer && footer.getBoundingClientRect().top < window.innerHeight);
     if (progress && article) {
       const start = article.getBoundingClientRect().top + window.scrollY;
       const end = start + article.offsetHeight - window.innerHeight;
